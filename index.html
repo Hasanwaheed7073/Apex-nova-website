@@ -224,8 +224,8 @@
 <p class="text-lg text-surface/80 group-hover:text-surface transition-colors">Ranking for Competitive Industry Verticals</p>
 </div>
 <div class="pt-4">
-<button id="simulate-growth-btn" class="px-8 py-4 border border-primary-container/30 text-primary-container hover:bg-primary-container hover:text-on-primary-container rounded-md font-bold text-lg flex items-center gap-3 transition-all hover:shadow-[0_0_20px_rgba(255,107,43,0.3)] hover:-translate-y-1">
-    <span class="material-symbols-outlined">rocket_launch</span> Initiate Growth
+<button id="simulate-growth-btn" class="px-8 py-4 border border-primary-container/30 text-primary-container hover:bg-primary-container hover:text-stone-900 rounded-md font-bold text-lg flex items-center gap-3 transition-all hover:shadow-[0_0_20px_rgba(255,107,43,0.3)] hover:-translate-y-1">
+    <span class="material-symbols-outlined pb-[2px]">rocket_launch</span> <span id="simulate-btn-text">Initiate Growth</span>
 </button>
 </div>
 </div>
@@ -233,9 +233,11 @@
 
 <div class="relative group perspective-1000">
 <div class="aspect-square bg-surface-container-low/5 rounded-full absolute -top-20 -right-20 w-[120%] animate-pulse mix-blend-screen pointer-events-none"></div>
-<div class="relative z-10 p-8 bg-surface-container-low/10 rounded-2xl backdrop-blur-2xl border border-white/10 shadow-[0_0_40px_rgba(255,107,43,0.1)] transition-transform duration-700 group-hover:-translate-y-2 hover:shadow-[0_0_80px_rgba(255,107,43,0.15)]">
+<div class="relative z-10 p-8 bg-surface-container-low/10 rounded-2xl backdrop-blur-2xl border border-white/10 shadow-[0_0_40px_rgba(255,107,43,0.1)] transition-transform duration-700 group-hover:-translate-y-2 hover:shadow-[0_0_80px_rgba(255,107,43,0.15)] overflow-hidden">
 
-<div class="flex justify-between items-center mb-8">
+<img src="mainlogo.png" id="seo-chart-logo" class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 object-contain opacity-0 scale-50 transition-all duration-[2000ms] pointer-events-none" alt="Nova Setup Logo">
+
+<div class="flex justify-between items-center mb-8 relative z-20">
 <div>
 <h4 class="font-bold text-lg">Traffic Volume</h4>
 <p class="text-xs text-surface/50 font-label tracking-wide uppercase">Trailing 12 Months</p>
@@ -307,12 +309,21 @@
                 hasAnimated = true;
 
                 // Update Button State
-                simulateBtn.innerHTML = '<span class="material-symbols-outlined">check_circle</span> Growth Unlocked';
+                simulateBtn.querySelector('.material-symbols-outlined').innerText = 'check_circle';
+                simulateBtn.querySelector('#simulate-btn-text').innerText = 'Growth Unlocked';
                 simulateBtn.classList.replace('border-primary-container/30', 'border-primary-container');
-                simulateBtn.classList.add('bg-primary-container', 'text-on-primary-container', 'pointer-events-none');
+                simulateBtn.classList.replace('text-primary-container', 'text-stone-900');
+                simulateBtn.classList.add('bg-primary-container', 'pointer-events-none');
                 
                 // Update Live Indicator
                 seoSection.querySelector('.tracking-wider.uppercase').innerText = 'Live Sync';
+
+                // Animate Logo Watermark
+                const logo = seoSection.querySelector('#seo-chart-logo');
+                if(logo) {
+                    logo.classList.replace('opacity-0', 'opacity-10');
+                    logo.classList.replace('scale-50', 'scale-[1.5]');
+                }
 
                 // Animate Bars
                 const bars = seoSection.querySelectorAll('.chart-bar');
