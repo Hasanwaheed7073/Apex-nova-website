@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Nova | Premium Web Design &amp; SEO</title>
+<link rel="preconnect" href="https://lh3.googleusercontent.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Manrope:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "surface-container-highest": "#e5e2e1",
+                      "surface": "#fcf9f8",
+                      "on-primary-fixed-variant": "#802a00",
+                      "tertiary-fixed-dim": "#71d2ff",
+                      "primary-fixed-dim": "#ffb59a",
+                      "on-primary": "#ffffff",
+                      "background": "#fcf9f8",
+                      "surface-container-high": "#eae7e7",
+                      "error-container": "#ffdad6",
+                      "secondary-container": "#e3e2e2",
+                      "tertiary": "#006686",
+                      "on-secondary-container": "#646464",
+                      "surface-variant": "#e5e2e1",
+                      "on-surface-variant": "#594138",
+                      "surface-bright": "#fcf9f8",
+                      "surface-container": "#f0eded",
+                      "on-error-container": "#93000a",
+                      "secondary-fixed-dim": "#c7c6c6",
+                      "on-surface": "#1c1b1b",
+                      "secondary-fixed": "#e3e2e2",
+                      "on-tertiary-container": "#003648",
+                      "on-tertiary": "#ffffff",
+                      "secondary": "#5e5e5e",
+                      "on-primary-container": "#5c1c00",
+                      "surface-container-lowest": "#ffffff",
+                      "tertiary-container": "#00a5d7",
+                      "inverse-on-surface": "#f3f0ef",
+                      "primary-container": "#ff6b2b",
+                      "on-secondary": "#ffffff",
+                      "surface-dim": "#dcd9d9",
+                      "on-tertiary-fixed": "#001e2b",
+                      "inverse-surface": "#313030",
+                      "on-primary-fixed": "#380d00",
+                      "tertiary-fixed": "#c0e8ff",
+                      "outline-variant": "#e2bfb3",
+                      "on-secondary-fixed": "#1b1c1c",
+                      "on-background": "#1c1b1b",
+                      "surface-container-low": "#f6f3f2",
+                      "inverse-primary": "#ffb59a",
+                      "on-secondary-fixed-variant": "#464747",
+                      "on-tertiary-fixed-variant": "#004d66",
+                      "primary": "#a83900",
+                      "on-error": "#ffffff",
+                      "surface-tint": "#a83900",
+                      "error": "#ba1a1a",
+                      "primary-fixed": "#ffdbce",
+                      "outline": "#8d7167"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "fontFamily": {
+                      "headline": ["Space Grotesk"],
+                      "body": ["Manrope"],
+                      "label": ["Manrope"]
+              }
+            },
+          }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .text-huge { font-size: clamp(3.5rem, 10vw, 8rem); line-height: 0.9; letter-spacing: -0.04em; }
+        .glass-nav { backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); }
+        .tonal-shift-no-border { border: none !important; }
+        .mask-angular { clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%); }
+        .gradient-brand { background: linear-gradient(135deg, #a83900 0%, #ff6b2b 100%); }
+
+        /* Hero Spinner */
+        .hero-logo-spinner {
+            cursor: pointer;
+            will-change: transform;
+            filter: drop-shadow(0 0 0px transparent);
+            transition: filter 0.6s ease;
+        }
+        .hero-logo-spinner.glow {
+            filter: drop-shadow(0 0 24px rgba(255,107,43,0.6)) drop-shadow(0 0 80px rgba(168,57,0,0.35));
+        }
+    </style>
+</head>
+<body class="bg-surface font-body text-on-surface antialiased">
+<!-- Top Navigation Bar -->
+<nav class="fixed top-0 w-full z-50 bg-stone-50/80 dark:bg-stone-950/80 backdrop-blur-xl shadow-[0px_24px_48px_rgba(28,27,27,0.06)] tonal-shift-no-border">
+<div class="flex justify-between items-center px-8 py-4 max-w-screen-2xl mx-auto">
+<a href="#" class="flex items-center">
+    <img src="mainlogo.png" alt="Nova Logo" class="h-16 w-16 md:h-20 md:w-20 object-contain transition-transform hover:scale-105">
+</a>
+<div class="hidden md:flex items-center space-x-12">
+<a class="text-orange-600 dark:text-orange-500 font-bold border-b-2 border-orange-600 font-['Space_Grotesk'] tracking-tight transition-colors duration-300" href="#services">Services</a>
+<a class="text-stone-600 dark:text-stone-400 font-medium font-['Space_Grotesk'] tracking-tight hover:text-orange-600 dark:hover:text-orange-400 transition-colors duration-300" href="#work">Work</a>
+<a class="text-stone-600 dark:text-stone-400 font-medium font-['Space_Grotesk'] tracking-tight hover:text-orange-600 dark:hover:text-orange-400 transition-colors duration-300" href="#seo">SEO</a>
+<a class="text-stone-600 dark:text-stone-400 font-medium font-['Space_Grotesk'] tracking-tight hover:text-orange-600 dark:hover:text-orange-400 transition-colors duration-300" href="#testimonials">Testimonials</a>
+<a class="text-stone-600 dark:text-stone-400 font-medium font-['Space_Grotesk'] tracking-tight hover:text-orange-600 dark:hover:text-orange-400 transition-colors duration-300" href="#contact">Contact</a>
+</div>
+<div class="flex items-center gap-4">
+<button onclick="document.getElementById('contact').scrollIntoView()" class="bg-primary-container text-on-primary-container px-6 py-2.5 rounded-md font-bold text-sm tracking-tight scale-105 active:scale-95 transition-transform">
+                    Get Started
+                </button>
+</div>
+</div>
+</nav>
+<!-- Hero Section -->
+<section class="relative min-h-screen flex items-center overflow-hidden pt-20">
+<div class="absolute inset-0 z-0">
+<div class="absolute inset-0 bg-surface opacity-90"></div>
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] rotate-12 opacity-10 blur-3xl gradient-brand rounded-full"></div>
+</div>
+<div class="container mx-auto px-8 relative z-10">
+<div class="max-w-6xl">
+<p class="font-label text-xs tracking-[0.2em] text-primary uppercase mb-6 font-bold">Web Design &amp; SEO Authority</p>
+<h1 class="font-headline text-huge font-bold text-on-background mb-12">
+                    We Build <br/>
+<span class="text-primary-container">The Future</span> <br/> 
+                    of the Web.
+                </h1>
+<div class="flex flex-col md:flex-row items-start gap-8 md:items-center">
+<button onclick="document.getElementById('contact').scrollIntoView()" class="bg-primary-container text-on-primary-container px-10 py-5 rounded-md font-black text-lg shadow-xl hover:-translate-y-1 hover:scale-105 transition-all duration-300 group">
+                        Start Your Project
+                        <span class="material-symbols-outlined align-middle ml-2 group-hover:translate-x-2 transition-transform">arrow_forward</span>
+</button>
+<div class="max-w-sm">
+<p class="text-secondary font-body leading-relaxed text-lg italic">
+                            Modern web design meeting technical precision. We don't just build sites; we architect digital growth.
+                        </p>
+</div>
+</div>
+</div>
+</div>
+<div class="absolute right-8 top-1/2 -translate-y-1/2 hidden lg:flex items-center justify-center z-20" style="width: 38%;">
+    <img id="heroSpinner" src="mainlogo.png" alt="Nova Spinning Logo" class="hero-logo-spinner w-full max-w-[420px] object-contain select-none" draggable="false">
+</div>
+</section>
+<!-- Services Section -->
+<section id="services" class="py-32 bg-surface-container-low">
+<div class="container mx-auto px-8">
+<div class="flex flex-col md:flex-row justify-between items-end mb-20 gap-8">
+<div class="max-w-2xl">
+<h2 class="font-headline text-5xl font-bold mb-6">Strategic Digital Solutions</h2>
+<p class="text-secondary text-xl leading-relaxed">We leverage modern aesthetics and performance engineering to transform your brand from a participant to a leader.</p>
+</div>
+<div class="text-right">
+<span class="font-label text-[10rem] font-black text-surface-container-high leading-none">01</span>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Web Design Card -->
+<div class="bg-surface-container-lowest p-12 rounded-lg group hover:bg-on-background transition-all duration-500 hover:-translate-y-4">
+<span class="material-symbols-outlined text-5xl text-primary-container mb-8 block" data-icon="web">web</span>
+<h3 class="font-headline text-3xl font-bold mb-4 group-hover:text-surface transition-colors">Web Design</h3>
+<p class="text-secondary group-hover:text-surface/70 transition-colors mb-8 leading-relaxed">
+                        Dynamic, accessible layouts that perform. We focus on high-impact visuals that guide users with intent.
+                    </p>
+<a class="text-primary-container font-bold flex items-center group-hover:gap-4 transition-all" href="#work">
+                        View Details <span class="material-symbols-outlined ml-2">north_east</span>
+</a>
+</div>
+<!-- SEO Card -->
+<div class="bg-surface-container-lowest p-12 rounded-lg group hover:bg-on-background transition-all duration-500 hover:-translate-y-4">
+<span class="material-symbols-outlined text-5xl text-primary-container mb-8 block" data-icon="trending_up">trending_up</span>
+<h3 class="font-headline text-3xl font-bold mb-4 group-hover:text-surface transition-colors">SEO Strategy</h3>
+<p class="text-secondary group-hover:text-surface/70 transition-colors mb-8 leading-relaxed">
+                        Data-backed search strategies. We focus on organic visibility and analyze intent to capture qualified web traffic.
+                    </p>
+<a class="text-primary-container font-bold flex items-center group-hover:gap-4 transition-all" href="#seo">
+                        View Details <span class="material-symbols-outlined ml-2">north_east</span>
+</a>
+</div>
+<!-- Brand Card -->
+<div class="bg-surface-container-lowest p-12 rounded-lg group hover:bg-on-background transition-all duration-500 hover:-translate-y-4">
+<span class="material-symbols-outlined text-5xl text-primary-container mb-8 block" data-icon="brush">brush</span>
+<h3 class="font-headline text-3xl font-bold mb-4 group-hover:text-surface transition-colors">Brand Identity</h3>
+<p class="text-secondary group-hover:text-surface/70 transition-colors mb-8 leading-relaxed">
+                        Visual storytelling for the modern age. We convey your brand’s identity through thoughtful typography and color.
+                    </p>
+<a class="text-primary-container font-bold flex items-center group-hover:gap-4 transition-all" href="#work">
+                        View Details <span class="material-symbols-outlined ml-2">north_east</span>
+</a>
+</div>
+</div>
+</div>
+</section>
+<!-- SEO Visual Section -->
+<section id="seo" class="py-32 bg-on-background text-surface overflow-hidden">
+<div class="container mx-auto px-8">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+<div>
+<h2 class="font-headline text-5xl md:text-6xl font-bold mb-8 leading-tight">Data-Driven <br/><span class="text-primary-container">Sustainable Growth</span></h2>
+<p class="text-surface/60 text-xl mb-12 max-w-lg leading-relaxed">
+                        Our SEO methodology isn't about ranking for everything—it's about owning the conversations that matter. We see the patterns others miss.
+                    </p>
+<div class="space-y-8">
+<div class="flex items-center gap-6">
+<span class="text-4xl font-headline font-bold text-primary-container">+340%</span>
+<p class="text-lg">Average Organic Revenue Increase</p>
+</div>
+<div class="h-px bg-surface/10 w-full"></div>
+<div class="flex items-center gap-6">
+<span class="text-4xl font-headline font-bold text-primary-container">Top 3</span>
+<p class="text-lg">Ranking for Competitive Industry Verticals</p>
+</div>
+</div>
+</div>
+<div class="relative">
+<div class="aspect-square bg-surface-container-low/5 rounded-full absolute -top-20 -right-20 w-[120%] animate-pulse"></div>
+<div class="relative z-10 p-8 bg-surface-container-low/10 rounded-2xl backdrop-blur-xl border border-white/5">
+<!-- Simulated Chart -->
+<div class="h-80 flex items-end justify-between gap-2">
+<div class="w-full bg-primary-container h-[20%] rounded-t-sm"></div>
+<div class="w-full bg-primary-container h-[35%] rounded-t-sm"></div>
+<div class="w-full bg-primary-container h-[30%] rounded-t-sm"></div>
+<div class="w-full bg-primary-container h-[55%] rounded-t-sm"></div>
+<div class="w-full bg-primary-container h-[45%] rounded-t-sm"></div>
+<div class="w-full bg-primary-container h-[80%] rounded-t-sm"></div>
+<div class="w-full bg-primary-container h-[70%] rounded-t-sm"></div>
+<div class="w-full bg-primary-container h-[100%] rounded-t-sm"></div>
+</div>
+<div class="mt-8 flex justify-between font-label text-xs uppercase tracking-widest text-surface/40">
+<span>Q1 2023</span>
+<span>Q2 2023</span>
+<span>Q3 2023</span>
+<span>Q4 2023</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Work/Case Studies Section -->
+<section id="work" class="py-32 bg-surface">
+<div class="container mx-auto px-8">
+<div class="mb-24">
+<h2 class="font-headline text-6xl font-bold mb-4">Selected Work</h2>
+<div class="h-2 w-32 bg-primary-container"></div>
+</div>
+<div class="space-y-40">
+<!-- Case Study 01 -->
+<div class="group flex flex-col md:flex-row gap-16 items-center">
+<div class="w-full md:w-3/5 overflow-hidden rounded-lg shadow-2xl transition-transform duration-700 hover:scale-[1.02]">
+<img alt="Luxury real estate website" loading="lazy" decoding="async" class="w-full h-auto grayscale group-hover:grayscale-0 transition-all duration-1000" data-alt="Modern sleek luxury real estate website landing page with high-end photography and elegant serif typography on a large desktop screen" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCDQe8T1TFbdfdP8sMxJCBjVFj8cYjcw0-DMOU29JLBPJ4BbN20uEXWGJ3NI51PUpI8cSC0j0wC6oH7REhhP30fPb1w98pR91DIyzrb_f2CBghp1UKlWyOincibstQqJZw9ACEiZHcMXmmhVVr-SgIDuFZ9lXI2thJFvD0dpT2nL7Ltg7oIVjalJgU0zj7qMWIiysqco-h4Lw1ZCapiZIyUpW7i-M2nLCUFk-26luCz_jmThFqLGMPUGhiSDT1QhWNV47Snn3Ni6Jdl"/>
+</div>
+<div class="w-full md:w-2/5">
+<span class="font-label text-sm tracking-widest text-primary mb-4 block">REAL ESTATE | WEB DESIGN</span>
+<h3 class="font-headline text-4xl font-bold mb-6">Velvet Properties</h3>
+<p class="text-secondary text-lg mb-8 leading-relaxed">
+                            A high-end editorial experience that mirrors the luxury of the properties they represent. Conversion rates increased by 45% post-launch.
+                        </p>
+<button class="border-b-2 border-on-background py-2 font-bold hover:text-primary transition-colors">Case Study →</button>
+</div>
+</div>
+<!-- Case Study 02 -->
+<div class="group flex flex-col md:flex-row-reverse gap-16 items-center">
+<div class="w-full md:w-3/5 overflow-hidden rounded-lg shadow-2xl transition-transform duration-700 hover:scale-[1.02]">
+<img alt="Fintech dashboard design" loading="lazy" decoding="async" class="w-full h-auto grayscale group-hover:grayscale-0 transition-all duration-1000" data-alt="Complex fintech dashboard interface with vibrant data visualizations, clean white cards, and smooth dark-mode accents displayed on an ultra-wide monitor" src="https://lh3.googleusercontent.com/aida-public/AB6AXuATm7ulsw3hqP14uCOSkNskKafTo4-13TkmZe08H3_IOaYMuPEIZWYxN_6ZY5LDEpQxyEqEbjO6DVeKxN_d9mm7NimzmGr11Gxh8hJDZNpSA0AJl1ust2uKlJ29Nr6aSzC7WzKVf9QAf5yDJpjene7KnluNhwM23anXALRBlvAdGB1MdvxuIFn3sJDhwOERgVafRbdGwYh5rMaGncl6PhZ0ijgZxQGmxMocNO8qjNISKUH5-Q4FwhNClzMirSVeeixdqVFFMXWv0KTM"/>
+</div>
+<div class="w-full md:w-2/5">
+<span class="font-label text-sm tracking-widest text-primary mb-4 block">FINTECH | PRODUCT STRATEGY</span>
+<h3 class="font-headline text-4xl font-bold mb-6">Nexus Finance</h3>
+<p class="text-secondary text-lg mb-8 leading-relaxed">
+                            Simplifying complexity through intuitive UX and kinetic data visualizations. Built for a $50M Series B expansion.
+                        </p>
+<button class="border-b-2 border-on-background py-2 font-bold hover:text-primary transition-colors">Case Study →</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Testimonials Section -->
+<section id="testimonials" class="py-32 bg-surface-container-high relative">
+<div class="container mx-auto px-8">
+<div class="max-w-4xl mx-auto text-center">
+<span class="material-symbols-outlined text-6xl text-primary-container/30 mb-10" style="font-variation-settings: 'FILL' 1;">format_quote</span>
+<blockquote class="font-headline text-3xl md:text-5xl font-bold italic leading-tight mb-12">
+                    "Nova significantly improved our online presence. Our search visibility increased remarkably in three months, and our new design has set a high standard for our brand."
+                </blockquote>
+<div>
+<p class="font-headline text-xl font-bold">Marcus Chen</p>
+<p class="font-label text-sm text-secondary uppercase tracking-widest">CEO, TechFlow Solutions</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Contact Section -->
+<section id="contact" class="py-32 bg-surface">
+<div class="container mx-auto px-8 max-w-6xl">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-24">
+<div>
+<h2 class="font-headline text-6xl font-bold mb-10">Let's Discuss <br/> Your Vision.</h2>
+<p class="text-secondary text-xl mb-12 leading-relaxed">Ready to elevate your web presence? We're ready when you are.</p>
+<div class="space-y-6">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary-container">mail</span>
+<span class="font-bold text-lg">hello@nova-agency.com</span>
+</div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary-container">location_on</span>
+<span class="font-bold text-lg">Creative District, Studio 22</span>
+</div>
+</div>
+</div>
+<div class="bg-surface-container-low p-10 rounded-lg">
+<form action="#" class="space-y-8" onsubmit="event.preventDefault(); alert('Thank you for reaching out! We will get back to you shortly.'); this.reset();">
+<div>
+<label class="font-label text-xs uppercase tracking-widest text-secondary block mb-4">Your Name</label>
+<input class="w-full bg-transparent border-0 border-b-2 border-outline-variant/30 focus:ring-0 focus:border-primary-container py-4 text-xl font-medium transition-all" placeholder="John Doe" type="text"/>
+</div>
+<div>
+<label class="font-label text-xs uppercase tracking-widest text-secondary block mb-4">Email Address</label>
+<input class="w-full bg-transparent border-0 border-b-2 border-outline-variant/30 focus:ring-0 focus:border-primary-container py-4 text-xl font-medium transition-all" placeholder="john@example.com" type="email"/>
+</div>
+<div>
+<label class="font-label text-xs uppercase tracking-widest text-secondary block mb-4">The Project</label>
+<textarea class="w-full bg-transparent border-0 border-b-2 border-outline-variant/30 focus:ring-0 focus:border-primary-container py-4 text-xl font-medium transition-all resize-none" placeholder="Tell us about your goal..." rows="4"></textarea>
+</div>
+<button class="w-full bg-primary-container text-on-primary-container py-6 rounded-md font-black text-xl hover:scale-[1.02] active:scale-[0.98] transition-all shadow-lg" type="submit">
+                            Send Message
+                        </button>
+</form>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-stone-900 dark:bg-black w-full py-20 px-8 tonal-contrast-dark-to-light">
+<div class="max-w-screen-2xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12">
+<div class="md:col-span-1">
+<div class="text-3xl font-black text-white mb-6">Nova</div>
+<p class="text-stone-400 font-body leading-relaxed mb-8">
+                    Premium digital experiences for brands that demand better. Architecting growth through modern design and data-driven SEO.
+                </p>
+<div class="flex gap-4">
+<a class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-stone-400 hover:text-orange-500 transition-colors" href="#">
+<span class="material-symbols-outlined">public</span>
+</a>
+<a class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-stone-400 hover:text-orange-500 transition-colors" href="#">
+<span class="material-symbols-outlined">alternate_email</span>
+</a>
+</div>
+</div>
+<div>
+<h4 class="font-['Manrope'] text-sm uppercase tracking-widest text-orange-500 mb-8">Navigation</h4>
+<ul class="space-y-4">
+<li><a class="text-stone-400 hover:text-white transition-all duration-200" href="#services">Services</a></li>
+<li><a class="text-stone-400 hover:text-white transition-all duration-200" href="#work">Work</a></li>
+<li><a class="text-stone-400 hover:text-white transition-all duration-200" href="#seo">SEO Strategy</a></li>
+<li><a class="text-stone-400 hover:text-white transition-all duration-200" href="#testimonials">Testimonials</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-['Manrope'] text-sm uppercase tracking-widest text-orange-500 mb-8">Company</h4>
+<ul class="space-y-4">
+<li><a class="text-stone-400 hover:text-white transition-all duration-200" href="#">Privacy Policy</a></li>
+<li><a class="text-stone-400 hover:text-white transition-all duration-200" href="#">Terms of Service</a></li>
+<li><a class="text-stone-400 hover:text-white transition-all duration-200" href="#">LinkedIn</a></li>
+<li><a class="text-stone-400 hover:text-white transition-all duration-200" href="#">Twitter</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-['Manrope'] text-sm uppercase tracking-widest text-orange-500 mb-8">Location</h4>
+<p class="text-stone-400 leading-relaxed">
+                    88 Creative Plaza<br/>
+                    Suite 404<br/>
+                    San Francisco, CA 94103
+                </p>
+<p class="mt-4 text-stone-400">contact@nova.agency</p>
+</div>
+</div>
+<div class="max-w-screen-2xl mx-auto mt-20 pt-8 border-t border-white/5 text-stone-500 text-xs tracking-widest uppercase">
+            © 2024 Nova Agency. Premium Web Experiences.
+        </div>
+</footer>
+<script>
+(function() {
+    const spinner = document.getElementById('heroSpinner');
+    if (!spinner) return;
+
+    let angle = 0;              // current rotation in degrees
+    let speed = 0;              // current deg/frame (~60fps)
+    let targetSpeed = 0;        // what we're easing toward
+    const baseScrollSpeed = 3;  // deg/frame when scrolling
+    const clickBoostAmount = 4; // deg/frame added per click
+    const maxSpeed = 40;        // absolute max deg/frame
+    const friction = 0.97;      // multiplicative drag when decelerating
+    const easing = 0.08;        // how fast speed approaches target
+
+    let isScrolling = false;
+    let scrollTimeout = null;
+    let lastScrollY = window.scrollY;
+
+    // Scroll detection
+    window.addEventListener('scroll', function() {
+        const delta = Math.abs(window.scrollY - lastScrollY);
+        lastScrollY = window.scrollY;
+
+        isScrolling = true;
+        // Scale scroll speed by how fast user scrolls
+        targetSpeed = Math.min(maxSpeed, baseScrollSpeed + delta * 0.15);
+
+        clearTimeout(scrollTimeout);
+        scrollTimeout = setTimeout(function() {
+            isScrolling = false;
+        }, 150);
+    }, { passive: true });
+
+    // Click boost
+    spinner.addEventListener('click', function() {
+        speed = Math.min(maxSpeed, speed + clickBoostAmount);
+        targetSpeed = speed;
+    });
+
+    // Glow management
+    function updateGlow() {
+        if (speed > 8) {
+            spinner.classList.add('glow');
+        } else {
+            spinner.classList.remove('glow');
+        }
+    }
+
+    // Main render loop
+    function frame() {
+        if (isScrolling) {
+            // Smoothly ramp toward target
+            speed += (targetSpeed - speed) * easing;
+        } else {
+            // Apply friction to slow down
+            speed *= friction;
+            if (speed < 0.05) speed = 0;
+        }
+
+        if (speed > 0) {
+            angle = (angle + speed) % 360;
+            spinner.style.transform = 'rotate(' + angle + 'deg)';
+        }
+
+        updateGlow();
+        requestAnimationFrame(frame);
+    }
+
+    requestAnimationFrame(frame);
+})();
+</script>
+</body></html>
