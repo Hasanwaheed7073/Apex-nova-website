@@ -202,51 +202,127 @@
 </div>
 </section>
 <!-- SEO Visual Section -->
-<section id="seo" class="py-32 bg-on-background text-surface overflow-hidden">
-<div class="container mx-auto px-8">
+<section id="seo" class="py-32 bg-on-background text-surface overflow-hidden relative">
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-primary-container/5 rounded-full blur-[120px] pointer-events-none"></div>
+
+<div class="container mx-auto px-8 relative z-10">
 <div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
 <div>
 <h2 class="font-headline text-5xl md:text-6xl font-bold mb-8 leading-tight">Data-Driven <br/><span class="text-primary-container">Sustainable Growth</span></h2>
 <p class="text-surface/60 text-xl mb-12 max-w-lg leading-relaxed">
                         Our SEO methodology isn't about ranking for everything—it's about owning the conversations that matter. We see the patterns others miss.
                     </p>
+
 <div class="space-y-8">
-<div class="flex items-center gap-6">
-<span class="text-4xl font-headline font-bold text-primary-container">+340%</span>
-<p class="text-lg">Average Organic Revenue Increase</p>
+<div class="flex items-center gap-6 group">
+<span class="stat-counter text-5xl font-headline font-black text-transparent bg-clip-text bg-gradient-to-r from-primary-container to-primary transition-transform group-hover:-translate-y-1 duration-300" data-prefix="+" data-suffix="%" data-target="340">+0%</span>
+<p class="text-lg text-surface/80 group-hover:text-surface transition-colors">Average Organic Revenue Increase</p>
 </div>
-<div class="h-px bg-surface/10 w-full"></div>
-<div class="flex items-center gap-6">
-<span class="text-4xl font-headline font-bold text-primary-container">Top 3</span>
-<p class="text-lg">Ranking for Competitive Industry Verticals</p>
+<div class="h-px bg-gradient-to-r from-surface/20 to-transparent w-full"></div>
+<div class="flex items-center gap-6 group">
+<span class="stat-counter text-5xl font-headline font-black text-transparent bg-clip-text bg-gradient-to-r from-primary-container to-primary transition-transform group-hover:-translate-y-1 duration-300" data-prefix="Top " data-suffix="" data-target="3">Top 0</span>
+<p class="text-lg text-surface/80 group-hover:text-surface transition-colors">Ranking for Competitive Industry Verticals</p>
 </div>
 </div>
 </div>
-<div class="relative">
-<div class="aspect-square bg-surface-container-low/5 rounded-full absolute -top-20 -right-20 w-[120%] animate-pulse"></div>
-<div class="relative z-10 p-8 bg-surface-container-low/10 rounded-2xl backdrop-blur-xl border border-white/5">
-<!-- Simulated Chart -->
-<div class="h-80 flex items-end justify-between gap-2">
-<div class="w-full bg-primary-container h-[20%] rounded-t-sm"></div>
-<div class="w-full bg-primary-container h-[35%] rounded-t-sm"></div>
-<div class="w-full bg-primary-container h-[30%] rounded-t-sm"></div>
-<div class="w-full bg-primary-container h-[55%] rounded-t-sm"></div>
-<div class="w-full bg-primary-container h-[45%] rounded-t-sm"></div>
-<div class="w-full bg-primary-container h-[80%] rounded-t-sm"></div>
-<div class="w-full bg-primary-container h-[70%] rounded-t-sm"></div>
-<div class="w-full bg-primary-container h-[100%] rounded-t-sm"></div>
+
+<div class="relative group perspective-1000">
+<div class="aspect-square bg-surface-container-low/5 rounded-full absolute -top-20 -right-20 w-[120%] animate-pulse mix-blend-screen pointer-events-none"></div>
+<div class="relative z-10 p-8 bg-surface-container-low/10 rounded-2xl backdrop-blur-2xl border border-white/10 shadow-[0_0_40px_rgba(255,107,43,0.1)] transition-transform duration-700 group-hover:-translate-y-2 hover:shadow-[0_0_80px_rgba(255,107,43,0.15)]">
+
+<div class="flex justify-between items-center mb-8">
+<div>
+<h4 class="font-bold text-lg">Traffic Volume</h4>
+<p class="text-xs text-surface/50 font-label tracking-wide uppercase">Trailing 12 Months</p>
 </div>
+<div class="flex gap-2 items-center px-3 py-1 bg-surface-container-low/20 rounded-full border border-white/10">
+<span class="w-2 h-2 rounded-full bg-primary animate-ping"></span>
+<span class="text-[10px] font-bold text-surface tracking-wider uppercase">Live Sync</span>
+</div>
+</div>
+
+<div class="h-64 flex items-end justify-between gap-3 relative">
+<div class="absolute inset-0 flex flex-col justify-between pointer-events-none opacity-20">
+<div class="border-t border-dashed border-surface/50 w-full"></div>
+<div class="border-t border-dashed border-surface/50 w-full"></div>
+<div class="border-t border-dashed border-surface/50 w-full"></div>
+<div class="border-t border-dashed border-surface/50 w-full"></div>
+</div>
+
+<div class="chart-bar w-full bg-gradient-brand h-[0%] rounded-t-sm shadow-[0_0_15px_rgba(255,107,43,0.5)] transition-all duration-[1200ms] ease-[cubic-bezier(0.22,1,0.36,1)] delay-[100ms] relative group/bar" data-height="20%">
+<div class="absolute -top-10 left-1/2 -translate-x-1/2 opacity-0 group-hover/bar:opacity-100 transition-opacity bg-surface text-on-surface text-xs font-bold py-1 px-2 rounded pointer-events-none">12k</div>
+</div>
+<div class="chart-bar w-full bg-gradient-brand h-[0%] rounded-t-sm shadow-[0_0_15px_rgba(255,107,43,0.5)] transition-all duration-[1200ms] ease-[cubic-bezier(0.22,1,0.36,1)] delay-[200ms] relative group/bar" data-height="35%">
+<div class="absolute -top-10 left-1/2 -translate-x-1/2 opacity-0 group-hover/bar:opacity-100 transition-opacity bg-surface text-on-surface text-xs font-bold py-1 px-2 rounded pointer-events-none">21k</div>
+</div>
+<div class="chart-bar w-full bg-gradient-brand h-[0%] rounded-t-sm shadow-[0_0_15px_rgba(255,107,43,0.5)] transition-all duration-[1200ms] ease-[cubic-bezier(0.22,1,0.36,1)] delay-[300ms] relative group/bar" data-height="30%">
+<div class="absolute -top-10 left-1/2 -translate-x-1/2 opacity-0 group-hover/bar:opacity-100 transition-opacity bg-surface text-on-surface text-xs font-bold py-1 px-2 rounded pointer-events-none">18k</div>
+</div>
+<div class="chart-bar w-full bg-gradient-brand h-[0%] rounded-t-sm shadow-[0_0_15px_rgba(255,107,43,0.5)] transition-all duration-[1200ms] ease-[cubic-bezier(0.22,1,0.36,1)] delay-[400ms] relative group/bar" data-height="55%">
+<div class="absolute -top-10 left-1/2 -translate-x-1/2 opacity-0 group-hover/bar:opacity-100 transition-opacity bg-surface text-on-surface text-xs font-bold py-1 px-2 rounded pointer-events-none">34k</div>
+</div>
+<div class="chart-bar w-full bg-gradient-brand h-[0%] rounded-t-sm shadow-[0_0_15px_rgba(255,107,43,0.5)] transition-all duration-[1200ms] ease-[cubic-bezier(0.22,1,0.36,1)] delay-[500ms] relative group/bar" data-height="45%">
+<div class="absolute -top-10 left-1/2 -translate-x-1/2 opacity-0 group-hover/bar:opacity-100 transition-opacity bg-surface text-on-surface text-xs font-bold py-1 px-2 rounded pointer-events-none">28k</div>
+</div>
+<div class="chart-bar w-full bg-gradient-brand h-[0%] rounded-t-sm shadow-[0_0_15px_rgba(255,107,43,0.5)] transition-all duration-[1200ms] ease-[cubic-bezier(0.22,1,0.36,1)] delay-[600ms] relative group/bar" data-height="80%">
+<div class="absolute -top-10 left-1/2 -translate-x-1/2 opacity-0 group-hover/bar:opacity-100 transition-opacity bg-surface text-on-surface text-xs font-bold py-1 px-2 rounded pointer-events-none">48k</div>
+</div>
+<div class="chart-bar w-full bg-gradient-brand h-[0%] rounded-t-sm shadow-[0_0_15px_rgba(255,107,43,0.5)] transition-all duration-[1200ms] ease-[cubic-bezier(0.22,1,0.36,1)] delay-[700ms] relative group/bar" data-height="70%">
+<div class="absolute -top-10 left-1/2 -translate-x-1/2 opacity-0 group-hover/bar:opacity-100 transition-opacity bg-surface text-on-surface text-xs font-bold py-1 px-2 rounded pointer-events-none">42k</div>
+</div>
+<div class="chart-bar w-full bg-gradient-brand h-[0%] rounded-t-sm shadow-[0_0_15px_rgba(255,107,43,0.5)] transition-all duration-[1200ms] ease-[cubic-bezier(0.22,1,0.36,1)] delay-[800ms] relative group/bar" data-height="100%">
+<div class="absolute -top-10 left-1/2 -translate-x-1/2 opacity-0 group-hover/bar:opacity-100 transition-opacity bg-surface text-on-surface text-xs font-bold py-1 px-2 rounded pointer-events-none">60k</div>
+</div>
+</div>
+
 <div class="mt-8 flex justify-between font-label text-xs uppercase tracking-widest text-surface/40">
-<span>Q1 2023</span>
-<span>Q2 2023</span>
-<span>Q3 2023</span>
-<span>Q4 2023</span>
+<span>Q1</span>
+<span>Q2</span>
+<span>Q3</span>
+<span>Q4</span>
 </div>
 </div>
 </div>
 </div>
 </div>
 </section>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const seoObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const bars = entry.target.querySelectorAll('.chart-bar');
+                    bars.forEach(bar => bar.style.height = bar.getAttribute('data-height'));
+
+                    const counters = entry.target.querySelectorAll('.stat-counter');
+                    counters.forEach(counter => {
+                        const target = +counter.getAttribute('data-target');
+                        const prefix = counter.getAttribute('data-prefix') || '';
+                        const suffix = counter.getAttribute('data-suffix') || '';
+                        let current = 0;
+                        const inc = target / 40; 
+                        
+                        const updateCounter = () => {
+                            current += inc;
+                            if (current < target) {
+                                counter.innerText = `${prefix}${Math.ceil(current)}${suffix}`;
+                                requestAnimationFrame(updateCounter);
+                            } else {
+                                counter.innerText = `${prefix}${target}${suffix}`;
+                            }
+                        };
+                        updateCounter();
+                    });
+                    seoObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.3 });
+
+        const seoSection = document.getElementById('seo');
+        if (seoSection) seoObserver.observe(seoSection);
+    });
+</script>
 <!-- Work/Case Studies Section -->
 <section id="work" class="py-32 bg-surface">
 <div class="container mx-auto px-8">
