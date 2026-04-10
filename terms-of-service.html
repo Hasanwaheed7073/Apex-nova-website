@@ -71,8 +71,27 @@
           }
         }
     </script>
+
+    <script>
+        if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+        } else {
+            document.documentElement.classList.remove('dark');
+        }
+
+        function toggleDarkMode() {
+            if (document.documentElement.classList.contains('dark')) {
+                document.documentElement.classList.remove('dark');
+                localStorage.theme = 'light';
+            } else {
+                document.documentElement.classList.add('dark');
+                localStorage.theme = 'dark';
+            }
+        }
+    </script>
 </head>
-<body class="bg-surface font-body text-on-surface antialiased pt-32">
+
+<body class="bg-surface dark:bg-stone-950 font-body text-on-surface dark:text-stone-100 dark:text-stone-200 antialiased pt-32">
     <!-- Top Navigation Bar -->
     <nav class="fixed top-0 w-full z-50 bg-stone-50/80 dark:bg-stone-950/80 backdrop-blur-xl shadow-[0px_24px_48px_rgba(28,27,27,0.06)] border-none">
         <div class="flex justify-between items-center px-8 py-4 max-w-screen-2xl mx-auto">
@@ -86,36 +105,43 @@
                 <a class="text-stone-600 dark:text-stone-400 font-medium font-['Space_Grotesk'] tracking-tight hover:text-orange-600 transition-colors duration-300" href="index.html#testimonials">Testimonials</a>
                 <a class="text-stone-600 dark:text-stone-400 font-medium font-['Space_Grotesk'] tracking-tight hover:text-orange-600 transition-colors duration-300" href="index.html#contact">Contact</a>
             </div>
+
+            <div class="flex items-center gap-2 md:gap-4 ml-auto md:ml-0">
+                <button onclick="toggleDarkMode()" class="text-stone-600 dark:text-stone-400 hover:text-orange-600 transition-colors p-2 rounded-full focus:outline-none flex items-center justify-center">
+                    <span class="material-symbols-outlined dark:hidden block">dark_mode</span>
+                    <span class="material-symbols-outlined dark:block hidden text-stone-200">light_mode</span>
+                </button>
+</div>
         </div>
     </nav>
 
     <!-- Content -->
     <main class="container mx-auto px-8 max-w-4xl py-24 min-h-screen">
         <span class="font-label text-sm tracking-widest text-primary mb-4 block uppercase leading-none">Last Updated: October 2024</span>
-        <h1 class="font-headline text-5xl md:text-6xl font-bold mb-16 text-on-surface border-b pb-8 border-outline-variant/30">Terms of Service</h1>
+        <h1 class="font-headline text-5xl md:text-6xl font-bold mb-16 text-on-surface dark:text-stone-100 border-b pb-8 border-outline-variant dark:border-stone-700 dark:bg-stone-900/30">Terms of Service</h1>
         
-        <div class="prose prose-lg max-w-none text-secondary space-y-8">
-            <h2 class="font-headline text-2xl font-bold text-on-surface">1. Acceptance of Terms</h2>
+        <div class="prose prose-lg max-w-none text-secondary dark:text-stone-400 space-y-8">
+            <h2 class="font-headline text-2xl font-bold text-on-surface dark:text-stone-100">1. Acceptance of Terms</h2>
             <p>
                 By accessing and using this website, you accept and agree to be bound by the terms and provision of this agreement. Operating as Nova Agency, we offer these digital services subject to your compliance with these Terms.
             </p>
 
-            <h2 class="font-headline text-2xl font-bold text-on-surface">2. Services Scope</h2>
+            <h2 class="font-headline text-2xl font-bold text-on-surface dark:text-stone-100">2. Services Scope</h2>
             <p>
                 Nova provides premium web design, SEO optimization, and digital strategy services. The detailed scope, timeline, and cost of specific projects are governed by individual contracts and Statements of Work (SOW) executed between Nova and the client.
             </p>
 
-            <h2 class="font-headline text-2xl font-bold text-on-surface">3. Intellectual Property Rights</h2>
+            <h2 class="font-headline text-2xl font-bold text-on-surface dark:text-stone-100">3. Intellectual Property Rights</h2>
             <p>
                 The site and its original content, features, and functionality are owned by Nova Agency and are protected by international copyright, trademark, patent, trade secret, and other intellectual property or proprietary rights laws.
             </p>
 
-            <h2 class="font-headline text-2xl font-bold text-on-surface">4. Limitation of Liability</h2>
+            <h2 class="font-headline text-2xl font-bold text-on-surface dark:text-stone-100">4. Limitation of Liability</h2>
             <p>
                 In no event shall Nova, nor its directors, employees, partners, agents, suppliers, or affiliates, be liable for any indirect, incidental, special, consequential or punitive damages, including without limitation, loss of profits, data, use, goodwill, or other intangible losses, resulting from your access to or use of or inability to access or use the Service.
             </p>
 
-            <h2 class="font-headline text-2xl font-bold text-on-surface">5. Contact Information</h2>
+            <h2 class="font-headline text-2xl font-bold text-on-surface dark:text-stone-100">5. Contact Information</h2>
             <p>
                 If you have any queries about these Terms, please contact us at: <br/>
                 <strong>Email:</strong> aihasan91225@gmail.com
