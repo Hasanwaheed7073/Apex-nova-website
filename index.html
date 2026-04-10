@@ -108,15 +108,15 @@
         }
 
         @keyframes rocket-fly-up {
-            0% { transform: translateY(100px); opacity: 0; }
-            30% { opacity: 0.9; }
-            100% { transform: translateY(-400px); opacity: 0; }
+            0% { transform: translateY(50px); opacity: 0; }
+            10% { opacity: 1; }
+            100% { transform: translateY(-700px); opacity: 0; }
         }
         .rocket-container {
             position: absolute;
-            bottom: -50px;
+            bottom: 0;
             pointer-events: none;
-            z-index: 15;
+            z-index: 50;
             animation: rocket-fly-up 1.5s cubic-bezier(0.22, 1, 0.36, 1) forwards;
             display: flex;
             align-items: center;
@@ -379,17 +379,17 @@
                 }
 
                 // Animate Rockets
-                const chartWrapper = seoSection.querySelector('.h-64.flex.items-end');
+                const chartWrapper = seoSection.querySelector('.relative.group.perspective-1000');
                 if (chartWrapper) {
-                    for(let i=0; i<8; i++) {
+                    for(let i=0; i<12; i++) {
                         setTimeout(() => {
                             const r = document.createElement('div');
                             r.className = 'rocket-container';
-                            r.style.left = (Math.random() * 80 + 10) + '%';
-                            r.innerHTML = `<span class="material-symbols-outlined rocket-icon" style="transform: rotate(${Math.random() * 30 - 60}deg) scale(${Math.random() * 0.4 + 0.8})">rocket_launch</span>`;
+                            r.style.left = (Math.random() * 90 + 5) + '%';
+                            r.innerHTML = `<span class="material-symbols-outlined rocket-icon block" style="transform: rotate(${Math.random() * 30 - 60}deg) scale(${Math.random() * 0.5 + 0.8})">rocket_launch</span>`;
                             chartWrapper.appendChild(r);
-                            setTimeout(() => r.remove(), 2000);
-                        }, i * 150);
+                            setTimeout(() => r.remove(), 2500);
+                        }, i * 100);
                     }
                 }
 
