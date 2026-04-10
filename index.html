@@ -104,7 +104,28 @@
             100% { transform: translate(-50%, -50%) scale(1.5) rotate(720deg); opacity: 0.1; }
         }
         .animate-seo-spin-grow {
-            animation: seo-spin-grow 2s cubic-bezier(0.22, 1, 0.36, 1) forwards !important;
+            animation: seo-spin-grow 1s cubic-bezier(0.22, 1, 0.36, 1) forwards !important;
+        }
+
+        @keyframes rocket-fly-up {
+            0% { transform: translateY(100px); opacity: 0; }
+            30% { opacity: 0.9; }
+            100% { transform: translateY(-400px); opacity: 0; }
+        }
+        .rocket-container {
+            position: absolute;
+            bottom: -50px;
+            pointer-events: none;
+            z-index: 15;
+            animation: rocket-fly-up 1.5s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .rocket-icon {
+            color: #ff6b2b;
+            font-size: 2.5rem !important;
+            filter: drop-shadow(0 0 15px rgba(255,107,43,0.8));
         }
     </style>
 
@@ -355,6 +376,21 @@
                 const logo = seoSection.querySelector('#seo-chart-logo');
                 if(logo) {
                     logo.classList.add('animate-seo-spin-grow');
+                }
+
+                // Animate Rockets
+                const chartWrapper = seoSection.querySelector('.h-64.flex.items-end');
+                if (chartWrapper) {
+                    for(let i=0; i<8; i++) {
+                        setTimeout(() => {
+                            const r = document.createElement('div');
+                            r.className = 'rocket-container';
+                            r.style.left = (Math.random() * 80 + 10) + '%';
+                            r.innerHTML = `<span class="material-symbols-outlined rocket-icon" style="transform: rotate(${Math.random() * 30 - 60}deg) scale(${Math.random() * 0.4 + 0.8})">rocket_launch</span>`;
+                            chartWrapper.appendChild(r);
+                            setTimeout(() => r.remove(), 2000);
+                        }, i * 150);
+                    }
                 }
 
                 // Animate Bars
