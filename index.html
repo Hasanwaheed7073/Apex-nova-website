@@ -98,6 +98,14 @@
         .hero-logo-spinner.glow {
             filter: drop-shadow(0 0 24px rgba(255,107,43,0.6)) drop-shadow(0 0 80px rgba(168,57,0,0.35));
         }
+        
+        @keyframes seo-spin-grow {
+            0% { transform: translate(-50%, -50%) scale(0.5) rotate(0deg); opacity: 0; }
+            100% { transform: translate(-50%, -50%) scale(1.5) rotate(720deg); opacity: 0.1; }
+        }
+        .animate-seo-spin-grow {
+            animation: seo-spin-grow 2s cubic-bezier(0.22, 1, 0.36, 1) forwards !important;
+        }
     </style>
 </head>
 <body class="bg-surface font-body text-on-surface antialiased">
@@ -321,8 +329,7 @@
                 // Animate Logo Watermark
                 const logo = seoSection.querySelector('#seo-chart-logo');
                 if(logo) {
-                    logo.classList.replace('opacity-0', 'opacity-10');
-                    logo.style.transform = 'translate(-50%, -50%) scale(1.5) rotate(720deg)';
+                    logo.classList.add('animate-seo-spin-grow');
                 }
 
                 // Animate Bars
