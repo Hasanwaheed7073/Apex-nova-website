@@ -215,13 +215,18 @@
 
 <div class="space-y-8">
 <div class="flex items-center gap-6 group">
-<span class="stat-counter text-5xl font-headline font-black text-transparent bg-clip-text bg-gradient-to-r from-primary-container to-primary transition-transform group-hover:-translate-y-1 duration-300" data-prefix="+" data-suffix="%" data-target="340">+0%</span>
+<span class="stat-counter text-5xl font-headline font-black text-transparent bg-clip-text bg-gradient-to-r from-surface/40 to-surface/60 transition-all duration-700" data-prefix="+" data-suffix="%" data-start="12" data-target="340">+12%</span>
 <p class="text-lg text-surface/80 group-hover:text-surface transition-colors">Average Organic Revenue Increase</p>
 </div>
 <div class="h-px bg-gradient-to-r from-surface/20 to-transparent w-full"></div>
 <div class="flex items-center gap-6 group">
-<span class="stat-counter text-5xl font-headline font-black text-transparent bg-clip-text bg-gradient-to-r from-primary-container to-primary transition-transform group-hover:-translate-y-1 duration-300" data-prefix="Top " data-suffix="" data-target="3">Top 0</span>
+<span class="stat-counter text-5xl font-headline font-black text-transparent bg-clip-text bg-gradient-to-r from-surface/40 to-surface/60 transition-all duration-700" data-prefix="Top " data-suffix="" data-start="24" data-target="3">Top 24</span>
 <p class="text-lg text-surface/80 group-hover:text-surface transition-colors">Ranking for Competitive Industry Verticals</p>
+</div>
+<div class="pt-4">
+<button id="simulate-growth-btn" class="px-8 py-4 border border-primary-container/30 text-primary-container hover:bg-primary-container hover:text-on-primary-container rounded-md font-bold text-lg flex items-center gap-3 transition-all hover:shadow-[0_0_20px_rgba(255,107,43,0.3)] hover:-translate-y-1">
+    <span class="material-symbols-outlined">rocket_launch</span> Initiate Growth
+</button>
 </div>
 </div>
 </div>
@@ -236,8 +241,8 @@
 <p class="text-xs text-surface/50 font-label tracking-wide uppercase">Trailing 12 Months</p>
 </div>
 <div class="flex gap-2 items-center px-3 py-1 bg-surface-container-low/20 rounded-full border border-white/10">
-<span class="w-2 h-2 rounded-full bg-primary animate-ping"></span>
-<span class="text-[10px] font-bold text-surface tracking-wider uppercase">Live Sync</span>
+<span class="w-2 h-2 rounded-full bg-primary animate-ping" id="live-indicator"></span>
+<span class="text-[10px] font-bold text-surface tracking-wider uppercase">Standby</span>
 </div>
 </div>
 
@@ -249,29 +254,29 @@
 <div class="border-t border-dashed border-surface/50 w-full"></div>
 </div>
 
-<div class="chart-bar w-full bg-gradient-brand h-[0%] rounded-t-sm shadow-[0_0_15px_rgba(255,107,43,0.5)] transition-all duration-[1200ms] ease-[cubic-bezier(0.22,1,0.36,1)] delay-[100ms] relative group/bar" data-height="20%">
-<div class="absolute -top-10 left-1/2 -translate-x-1/2 opacity-0 group-hover/bar:opacity-100 transition-opacity bg-surface text-on-surface text-xs font-bold py-1 px-2 rounded pointer-events-none">12k</div>
+<div class="chart-bar w-full bg-surface/20 h-[10%] rounded-t-sm shadow-[0_0_15px_rgba(255,107,43,0)] transition-all duration-[1200ms] ease-[cubic-bezier(0.22,1,0.36,1)] delay-[100ms] relative group/bar" data-height="20%">
+<div class="absolute -top-10 left-1/2 -translate-x-1/2 opacity-0 group-hover/bar:opacity-100 transition-opacity bg-surface text-on-surface text-xs font-bold py-1 px-2 rounded pointer-events-none chart-label">3k</div>
 </div>
-<div class="chart-bar w-full bg-gradient-brand h-[0%] rounded-t-sm shadow-[0_0_15px_rgba(255,107,43,0.5)] transition-all duration-[1200ms] ease-[cubic-bezier(0.22,1,0.36,1)] delay-[200ms] relative group/bar" data-height="35%">
-<div class="absolute -top-10 left-1/2 -translate-x-1/2 opacity-0 group-hover/bar:opacity-100 transition-opacity bg-surface text-on-surface text-xs font-bold py-1 px-2 rounded pointer-events-none">21k</div>
+<div class="chart-bar w-full bg-surface/20 h-[8%] rounded-t-sm shadow-[0_0_15px_rgba(255,107,43,0)] transition-all duration-[1200ms] ease-[cubic-bezier(0.22,1,0.36,1)] delay-[200ms] relative group/bar" data-height="35%">
+<div class="absolute -top-10 left-1/2 -translate-x-1/2 opacity-0 group-hover/bar:opacity-100 transition-opacity bg-surface text-on-surface text-xs font-bold py-1 px-2 rounded pointer-events-none chart-label">2k</div>
 </div>
-<div class="chart-bar w-full bg-gradient-brand h-[0%] rounded-t-sm shadow-[0_0_15px_rgba(255,107,43,0.5)] transition-all duration-[1200ms] ease-[cubic-bezier(0.22,1,0.36,1)] delay-[300ms] relative group/bar" data-height="30%">
-<div class="absolute -top-10 left-1/2 -translate-x-1/2 opacity-0 group-hover/bar:opacity-100 transition-opacity bg-surface text-on-surface text-xs font-bold py-1 px-2 rounded pointer-events-none">18k</div>
+<div class="chart-bar w-full bg-surface/20 h-[12%] rounded-t-sm shadow-[0_0_15px_rgba(255,107,43,0)] transition-all duration-[1200ms] ease-[cubic-bezier(0.22,1,0.36,1)] delay-[300ms] relative group/bar" data-height="30%">
+<div class="absolute -top-10 left-1/2 -translate-x-1/2 opacity-0 group-hover/bar:opacity-100 transition-opacity bg-surface text-on-surface text-xs font-bold py-1 px-2 rounded pointer-events-none chart-label">4k</div>
 </div>
-<div class="chart-bar w-full bg-gradient-brand h-[0%] rounded-t-sm shadow-[0_0_15px_rgba(255,107,43,0.5)] transition-all duration-[1200ms] ease-[cubic-bezier(0.22,1,0.36,1)] delay-[400ms] relative group/bar" data-height="55%">
-<div class="absolute -top-10 left-1/2 -translate-x-1/2 opacity-0 group-hover/bar:opacity-100 transition-opacity bg-surface text-on-surface text-xs font-bold py-1 px-2 rounded pointer-events-none">34k</div>
+<div class="chart-bar w-full bg-surface/20 h-[15%] rounded-t-sm shadow-[0_0_15px_rgba(255,107,43,0)] transition-all duration-[1200ms] ease-[cubic-bezier(0.22,1,0.36,1)] delay-[400ms] relative group/bar" data-height="55%">
+<div class="absolute -top-10 left-1/2 -translate-x-1/2 opacity-0 group-hover/bar:opacity-100 transition-opacity bg-surface text-on-surface text-xs font-bold py-1 px-2 rounded pointer-events-none chart-label">6k</div>
 </div>
-<div class="chart-bar w-full bg-gradient-brand h-[0%] rounded-t-sm shadow-[0_0_15px_rgba(255,107,43,0.5)] transition-all duration-[1200ms] ease-[cubic-bezier(0.22,1,0.36,1)] delay-[500ms] relative group/bar" data-height="45%">
-<div class="absolute -top-10 left-1/2 -translate-x-1/2 opacity-0 group-hover/bar:opacity-100 transition-opacity bg-surface text-on-surface text-xs font-bold py-1 px-2 rounded pointer-events-none">28k</div>
+<div class="chart-bar w-full bg-surface/20 h-[14%] rounded-t-sm shadow-[0_0_15px_rgba(255,107,43,0)] transition-all duration-[1200ms] ease-[cubic-bezier(0.22,1,0.36,1)] delay-[500ms] relative group/bar" data-height="45%">
+<div class="absolute -top-10 left-1/2 -translate-x-1/2 opacity-0 group-hover/bar:opacity-100 transition-opacity bg-surface text-on-surface text-xs font-bold py-1 px-2 rounded pointer-events-none chart-label">5k</div>
 </div>
-<div class="chart-bar w-full bg-gradient-brand h-[0%] rounded-t-sm shadow-[0_0_15px_rgba(255,107,43,0.5)] transition-all duration-[1200ms] ease-[cubic-bezier(0.22,1,0.36,1)] delay-[600ms] relative group/bar" data-height="80%">
-<div class="absolute -top-10 left-1/2 -translate-x-1/2 opacity-0 group-hover/bar:opacity-100 transition-opacity bg-surface text-on-surface text-xs font-bold py-1 px-2 rounded pointer-events-none">48k</div>
+<div class="chart-bar w-full bg-surface/20 h-[20%] rounded-t-sm shadow-[0_0_15px_rgba(255,107,43,0)] transition-all duration-[1200ms] ease-[cubic-bezier(0.22,1,0.36,1)] delay-[600ms] relative group/bar" data-height="80%">
+<div class="absolute -top-10 left-1/2 -translate-x-1/2 opacity-0 group-hover/bar:opacity-100 transition-opacity bg-surface text-on-surface text-xs font-bold py-1 px-2 rounded pointer-events-none chart-label">8k</div>
 </div>
-<div class="chart-bar w-full bg-gradient-brand h-[0%] rounded-t-sm shadow-[0_0_15px_rgba(255,107,43,0.5)] transition-all duration-[1200ms] ease-[cubic-bezier(0.22,1,0.36,1)] delay-[700ms] relative group/bar" data-height="70%">
-<div class="absolute -top-10 left-1/2 -translate-x-1/2 opacity-0 group-hover/bar:opacity-100 transition-opacity bg-surface text-on-surface text-xs font-bold py-1 px-2 rounded pointer-events-none">42k</div>
+<div class="chart-bar w-full bg-surface/20 h-[18%] rounded-t-sm shadow-[0_0_15px_rgba(255,107,43,0)] transition-all duration-[1200ms] ease-[cubic-bezier(0.22,1,0.36,1)] delay-[700ms] relative group/bar" data-height="70%">
+<div class="absolute -top-10 left-1/2 -translate-x-1/2 opacity-0 group-hover/bar:opacity-100 transition-opacity bg-surface text-on-surface text-xs font-bold py-1 px-2 rounded pointer-events-none chart-label">7k</div>
 </div>
-<div class="chart-bar w-full bg-gradient-brand h-[0%] rounded-t-sm shadow-[0_0_15px_rgba(255,107,43,0.5)] transition-all duration-[1200ms] ease-[cubic-bezier(0.22,1,0.36,1)] delay-[800ms] relative group/bar" data-height="100%">
-<div class="absolute -top-10 left-1/2 -translate-x-1/2 opacity-0 group-hover/bar:opacity-100 transition-opacity bg-surface text-on-surface text-xs font-bold py-1 px-2 rounded pointer-events-none">60k</div>
+<div class="chart-bar w-full bg-surface/20 h-[22%] rounded-t-sm shadow-[0_0_15px_rgba(255,107,43,0)] transition-all duration-[1200ms] ease-[cubic-bezier(0.22,1,0.36,1)] delay-[800ms] relative group/bar" data-height="100%">
+<div class="absolute -top-10 left-1/2 -translate-x-1/2 opacity-0 group-hover/bar:opacity-100 transition-opacity bg-surface text-on-surface text-xs font-bold py-1 px-2 rounded pointer-events-none chart-label">9k</div>
 </div>
 </div>
 
@@ -289,38 +294,73 @@
 
 <script>
     document.addEventListener('DOMContentLoaded', () => {
-        const seoObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const bars = entry.target.querySelectorAll('.chart-bar');
-                    bars.forEach(bar => bar.style.height = bar.getAttribute('data-height'));
-
-                    const counters = entry.target.querySelectorAll('.stat-counter');
-                    counters.forEach(counter => {
-                        const target = +counter.getAttribute('data-target');
-                        const prefix = counter.getAttribute('data-prefix') || '';
-                        const suffix = counter.getAttribute('data-suffix') || '';
-                        let current = 0;
-                        const inc = target / 40; 
-                        
-                        const updateCounter = () => {
-                            current += inc;
-                            if (current < target) {
-                                counter.innerText = `${prefix}${Math.ceil(current)}${suffix}`;
-                                requestAnimationFrame(updateCounter);
-                            } else {
-                                counter.innerText = `${prefix}${target}${suffix}`;
-                            }
-                        };
-                        updateCounter();
-                    });
-                    seoObserver.unobserve(entry.target);
-                }
-            });
-        }, { threshold: 0.3 });
-
         const seoSection = document.getElementById('seo');
-        if (seoSection) seoObserver.observe(seoSection);
+        const simulateBtn = document.getElementById('simulate-growth-btn');
+        let hasAnimated = false;
+        
+        // Final targets for the bar labels
+        const finalLabels = ['12k', '21k', '18k', '34k', '28k', '48k', '42k', '60k'];
+
+        if (simulateBtn && seoSection) {
+            simulateBtn.addEventListener('click', () => {
+                if (hasAnimated) return;
+                hasAnimated = true;
+
+                // Update Button State
+                simulateBtn.innerHTML = '<span class="material-symbols-outlined">check_circle</span> Growth Unlocked';
+                simulateBtn.classList.replace('border-primary-container/30', 'border-primary-container');
+                simulateBtn.classList.add('bg-primary-container', 'text-on-primary-container', 'pointer-events-none');
+                
+                // Update Live Indicator
+                seoSection.querySelector('.tracking-wider.uppercase').innerText = 'Live Sync';
+
+                // Animate Bars
+                const bars = seoSection.querySelectorAll('.chart-bar');
+                const labels = seoSection.querySelectorAll('.chart-label');
+                
+                bars.forEach((bar, index) => {
+                    bar.style.height = bar.getAttribute('data-height');
+                    bar.classList.replace('bg-surface/20', 'bg-gradient-brand');
+                    bar.classList.replace('shadow-[0_0_15px_rgba(255,107,43,0)]', 'shadow-[0_0_15px_rgba(255,107,43,0.5)]');
+                    
+                    // Update labels after delay
+                    setTimeout(() => {
+                        labels[index].innerText = finalLabels[index];
+                    }, 400 + (index * 100)); // staggering match with CSS delays
+                });
+
+                // Animate Counters
+                const counters = seoSection.querySelectorAll('.stat-counter');
+                counters.forEach(counter => {
+                    // Ignite Colors
+                    counter.classList.replace('from-surface/40', 'from-primary-container');
+                    counter.classList.replace('to-surface/60', 'to-primary');
+                
+                    const target = +counter.getAttribute('data-target');
+                    const start = +counter.getAttribute('data-start');
+                    const prefix = counter.getAttribute('data-prefix') || '';
+                    const suffix = counter.getAttribute('data-suffix') || '';
+                    
+                    let current = start;
+                    const diff = target - start;
+                    const steps = 60; 
+                    const inc = diff / steps; 
+                    let stepCount = 0;
+                    
+                    const updateCounter = () => {
+                        current += inc;
+                        stepCount++;
+                        if (stepCount < steps) {
+                            counter.innerText = `${prefix}${Math.round(current)}${suffix}`;
+                            requestAnimationFrame(updateCounter);
+                        } else {
+                            counter.innerText = `${prefix}${target}${suffix}`;
+                        }
+                    };
+                    updateCounter();
+                });
+            });
+        }
     });
 </script>
 <!-- Work/Case Studies Section -->
