@@ -4,9 +4,10 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Nova | Premium Web Design &amp; SEO</title>
-<link rel="preconnect" href="https://lh3.googleusercontent.com" crossorigin>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" href="mainlogo-nav.webp" as="image" type="image/webp">
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Manrope:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <script id="tailwind-config">
@@ -82,7 +83,7 @@
         .material-symbols-outlined {
             font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
         }
-        .text-huge { font-size: clamp(3.5rem, 10vw, 8rem); line-height: 0.9; letter-spacing: -0.04em; }
+        .text-huge { font-size: clamp(2.5rem, 10vw, 8rem); line-height: 0.9; letter-spacing: -0.04em; }
         .glass-nav { backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); }
         .tonal-shift-no-border { border: none !important; }
         .mask-angular { clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%); }
@@ -92,10 +93,12 @@
         .hero-logo-spinner {
             cursor: pointer;
             will-change: transform;
+            -webkit-filter: drop-shadow(0 0 0px transparent);
             filter: drop-shadow(0 0 0px transparent);
-            transition: filter 0.6s ease;
+            transition: filter 0.6s ease, -webkit-filter 0.6s ease;
         }
         .hero-logo-spinner.glow {
+            -webkit-filter: drop-shadow(0 0 24px rgba(255,107,43,0.6)) drop-shadow(0 0 80px rgba(168,57,0,0.35));
             filter: drop-shadow(0 0 24px rgba(255,107,43,0.6)) drop-shadow(0 0 80px rgba(168,57,0,0.35));
         }
         
@@ -151,9 +154,9 @@
 <body class="bg-surface dark:bg-stone-950 font-body text-on-surface dark:text-stone-100 dark:text-stone-200 antialiased">
 <!-- Top Navigation Bar -->
 <nav class="fixed top-0 w-full z-50 bg-stone-50/80 dark:bg-stone-950/80 backdrop-blur-xl shadow-[0px_24px_48px_rgba(28,27,27,0.06)] tonal-shift-no-border">
-<div class="flex justify-between items-center px-8 py-4 max-w-screen-2xl mx-auto">
-<a href="#" class="flex items-center">
-    <img src="mainlogo.png" alt="Nova Logo" class="h-16 w-16 md:h-20 md:w-20 object-contain transition-transform hover:scale-105">
+<div class="flex justify-between items-center px-5 md:px-8 py-4 max-w-screen-2xl mx-auto">
+<a href="#" class="flex items-center flex-shrink-0">
+    <img src="mainlogo-nav.webp" alt="Nova Logo" width="160" height="160" class="h-10 w-10 md:h-20 md:w-20 object-contain transition-transform hover:scale-105">
 </a>
 <div class="hidden md:flex items-center space-x-12">
 <a class="text-orange-600 dark:text-orange-500 font-bold border-b-2 border-orange-600 font-['Space_Grotesk'] tracking-tight transition-colors duration-300" href="#services">Services</a>
@@ -168,34 +171,49 @@
                     <span class="material-symbols-outlined dark:hidden block">dark_mode</span>
                     <span class="material-symbols-outlined dark:block hidden text-stone-200">light_mode</span>
                 </button>
+                <button id="mobile-menu-btn" class="md:hidden text-stone-600 dark:text-stone-400 hover:text-orange-600 transition-colors p-2 rounded-full focus:outline-none flex items-center justify-center ml-1">
+                    <span class="material-symbols-outlined">menu</span>
+                </button>
 
-<button onclick="document.getElementById('contact').scrollIntoView()" class="bg-primary-container text-on-primary-container px-6 py-2.5 rounded-md font-bold text-sm tracking-tight scale-105 active:scale-95 transition-transform">
+<button onclick="document.getElementById('contact').scrollIntoView()" class="hidden md:block bg-primary-container text-on-primary-container px-6 py-2.5 rounded-md font-bold text-sm tracking-tight scale-105 active:scale-95 transition-transform">
                     Get Started
                 </button>
 </div>
 </div>
-</nav>
+
+        <!-- Mobile Menu Container -->
+        <div id="mobile-menu" class="hidden flex-col bg-stone-50 dark:bg-stone-950 border-t border-surface-variant dark:border-stone-800 absolute w-full left-0 top-full px-5 md:px-8 py-6 shadow-2xl">
+            
+<a class="text-orange-600 dark:text-orange-500 font-bold border-b-2 border-orange-600 font-['Space_Grotesk'] tracking-tight transition-colors duration-300" href="#services">Services</a>
+<a class="text-stone-600 dark:text-stone-400 font-medium font-['Space_Grotesk'] tracking-tight hover:text-orange-600 block py-2 dark:hover:text-orange-400 transition-colors duration-300" href="#work">Work</a>
+<a class="text-stone-600 dark:text-stone-400 font-medium font-['Space_Grotesk'] tracking-tight hover:text-orange-600 block py-2 dark:hover:text-orange-400 transition-colors duration-300" href="#seo">SEO</a>
+<a class="text-stone-600 dark:text-stone-400 font-medium font-['Space_Grotesk'] tracking-tight hover:text-orange-600 block py-2 dark:hover:text-orange-400 transition-colors duration-300" href="#testimonials">Testimonials</a>
+<a class="text-stone-600 dark:text-stone-400 font-medium font-['Space_Grotesk'] tracking-tight hover:text-orange-600 block py-2 dark:hover:text-orange-400 transition-colors duration-300" href="#contact">Contact</a>
+<a class="bg-primary-container block text-center text-on-primary-container px-6 py-3 rounded-md font-bold text-sm tracking-tight active:scale-95 transition-transform mt-4" href="#contact">Get Started</a>
+
+        </div>
+    </nav>
 <!-- Hero Section -->
-<section class="relative min-h-screen flex items-center overflow-hidden pt-20">
+<section class="relative min-h-screen flex items-center overflow-hidden pt-24 md:pt-20">
 <div class="absolute inset-0 z-0">
 <div class="absolute inset-0 bg-surface dark:bg-stone-950 opacity-90"></div>
 <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] rotate-12 opacity-10 blur-3xl gradient-brand rounded-full"></div>
 </div>
-<div class="container mx-auto px-8 relative z-10">
-<div class="max-w-6xl">
-<p class="font-label text-xs tracking-[0.2em] text-primary uppercase mb-6 font-bold">Web Design &amp; SEO Authority</p>
-<h1 class="font-headline text-huge font-bold text-on-background dark:text-stone-50 mb-12">
+<div class="container mx-auto px-5 md:px-8 relative z-10">
+<div class="max-w-6xl text-center md:text-left">
+<p class="font-label text-xs tracking-[0.2em] text-primary uppercase mb-4 md:mb-6 font-bold">Web Design &amp; SEO Authority</p>
+<h1 class="font-headline text-huge font-bold text-on-background dark:text-stone-50 mb-8 md:mb-12">
                     We Build <br/>
 <span class="text-primary-container">The Future</span> <br/> 
                     of the Web.
                 </h1>
-<div class="flex flex-col md:flex-row items-start gap-8 md:items-center">
-<button onclick="document.getElementById('contact').scrollIntoView()" class="bg-primary-container text-on-primary-container px-10 py-5 rounded-md font-black text-lg shadow-xl hover:-translate-y-1 hover:scale-105 transition-all duration-300 group">
+<div class="flex flex-col md:flex-row items-center md:items-center gap-6 md:gap-8">
+<button onclick="document.getElementById('contact').scrollIntoView()" class="bg-primary-container text-on-primary-container px-8 md:px-10 py-4 md:py-5 rounded-md font-black text-base md:text-lg shadow-xl hover:-translate-y-1 hover:scale-105 transition-all duration-300 group">
                         Start Your Project
                         <span class="material-symbols-outlined align-middle ml-2 group-hover:translate-x-2 transition-transform">arrow_forward</span>
 </button>
 <div class="max-w-sm">
-<p class="text-secondary dark:text-stone-400 font-body leading-relaxed text-lg italic">
+<p class="text-secondary dark:text-stone-400 font-body leading-relaxed text-base md:text-lg italic">
                             Modern web design meeting technical precision. We don't just build sites; we architect digital growth.
                         </p>
 </div>
@@ -203,26 +221,26 @@
 </div>
 </div>
 <div class="absolute right-8 top-1/2 -translate-y-1/2 hidden lg:flex items-center justify-center z-20" style="width: 38%;">
-    <img id="heroSpinner" src="mainlogo.png" alt="Nova Spinning Logo" class="hero-logo-spinner w-full max-w-[420px] object-contain select-none" draggable="false">
+    <img id="heroSpinner" src="mainlogo-hero.webp" alt="Nova Spinning Logo" width="840" height="840" fetchpriority="high" class="hero-logo-spinner w-full max-w-[420px] object-contain select-none" draggable="false">
 </div>
 </section>
 <!-- Services Section -->
-<section id="services" class="py-32 bg-surface-container-low dark:bg-stone-900">
-<div class="container mx-auto px-8">
-<div class="flex flex-col md:flex-row justify-between items-end mb-20 gap-8">
+<section id="services" class="py-16 md:py-32 bg-surface-container-low dark:bg-stone-900">
+<div class="container mx-auto px-5 md:px-8">
+<div class="flex flex-col md:flex-row justify-between items-center md:items-end mb-12 md:mb-20 gap-4 md:gap-8 text-center md:text-left">
 <div class="max-w-2xl">
-<h2 class="font-headline text-5xl font-bold mb-6">Strategic Digital Solutions</h2>
-<p class="text-secondary dark:text-stone-400 text-xl leading-relaxed">We leverage modern aesthetics and performance engineering to transform your brand from a participant to a leader.</p>
+<h2 class="font-headline text-3xl md:text-5xl font-bold mb-4 md:mb-6">Strategic Digital Solutions</h2>
+<p class="text-secondary dark:text-stone-400 text-base md:text-xl leading-relaxed">We leverage modern aesthetics and performance engineering to transform your brand from a participant to a leader.</p>
 </div>
-<div class="text-right">
+<div class="text-right hidden md:block">
 <span class="font-label text-[10rem] font-black text-surface-container-high leading-none">01</span>
 </div>
 </div>
 <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
 <!-- Web Design Card -->
-<div class="bg-surface-container-lowest dark:bg-stone-950 p-12 rounded-lg group hover:bg-on-background transition-all duration-500 hover:-translate-y-4">
+<div class="bg-surface-container-lowest dark:bg-stone-950 p-8 md:p-12 rounded-lg group hover:bg-on-background transition-all duration-500 hover:-translate-y-4">
 <span class="material-symbols-outlined text-5xl text-primary-container mb-8 block" data-icon="web">web</span>
-<h3 class="font-headline text-3xl font-bold mb-4 group-hover:text-surface transition-colors">Web Design</h3>
+<h3 class="font-headline text-2xl md:text-3xl font-bold mb-4 group-hover:text-surface transition-colors">Web Design</h3>
 <p class="text-secondary dark:text-stone-400 group-hover:text-surface/70 transition-colors mb-8 leading-relaxed">
                         Dynamic, accessible layouts that perform. We focus on high-impact visuals that guide users with intent.
                     </p>
@@ -231,9 +249,9 @@
 </a>
 </div>
 <!-- SEO Card -->
-<div class="bg-surface-container-lowest dark:bg-stone-950 p-12 rounded-lg group hover:bg-on-background transition-all duration-500 hover:-translate-y-4">
+<div class="bg-surface-container-lowest dark:bg-stone-950 p-8 md:p-12 rounded-lg group hover:bg-on-background transition-all duration-500 hover:-translate-y-4">
 <span class="material-symbols-outlined text-5xl text-primary-container mb-8 block" data-icon="trending_up">trending_up</span>
-<h3 class="font-headline text-3xl font-bold mb-4 group-hover:text-surface transition-colors">SEO Strategy</h3>
+<h3 class="font-headline text-2xl md:text-3xl font-bold mb-4 group-hover:text-surface transition-colors">SEO Strategy</h3>
 <p class="text-secondary dark:text-stone-400 group-hover:text-surface/70 transition-colors mb-8 leading-relaxed">
                         Data-backed search strategies. We focus on organic visibility and analyze intent to capture qualified web traffic.
                     </p>
@@ -242,9 +260,9 @@
 </a>
 </div>
 <!-- Brand Card -->
-<div class="bg-surface-container-lowest dark:bg-stone-950 p-12 rounded-lg group hover:bg-on-background transition-all duration-500 hover:-translate-y-4">
+<div class="bg-surface-container-lowest dark:bg-stone-950 p-8 md:p-12 rounded-lg group hover:bg-on-background transition-all duration-500 hover:-translate-y-4">
 <span class="material-symbols-outlined text-5xl text-primary-container mb-8 block" data-icon="brush">brush</span>
-<h3 class="font-headline text-3xl font-bold mb-4 group-hover:text-surface transition-colors">Brand Identity</h3>
+<h3 class="font-headline text-2xl md:text-3xl font-bold mb-4 group-hover:text-surface transition-colors">Brand Identity</h3>
 <p class="text-secondary dark:text-stone-400 group-hover:text-surface/70 transition-colors mb-8 leading-relaxed">
                         Visual storytelling for the modern age. We convey your brand’s identity through thoughtful typography and color.
                     </p>
@@ -256,29 +274,29 @@
 </div>
 </section>
 <!-- SEO Visual Section -->
-<section id="seo" class="py-32 bg-on-background text-surface overflow-hidden relative">
+<section id="seo" class="py-16 md:py-32 bg-on-background text-surface overflow-hidden relative">
 <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-primary-container/5 rounded-full blur-[120px] pointer-events-none"></div>
 
-<div class="container mx-auto px-8 relative z-10">
-<div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
-<div>
-<h2 class="font-headline text-5xl md:text-6xl font-bold mb-8 leading-tight">Data-Driven <br/><span class="text-primary-container">Sustainable Growth</span></h2>
-<p class="text-surface/60 text-xl mb-12 max-w-lg leading-relaxed">
+<div class="container mx-auto px-5 md:px-8 relative z-10">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-20 items-center">
+<div class="text-center lg:text-left">
+<h2 class="font-headline text-3xl md:text-5xl lg:text-6xl font-bold mb-6 md:mb-8 leading-tight">Data-Driven <br/><span class="text-primary-container">Sustainable Growth</span></h2>
+<p class="text-surface/60 text-base md:text-xl mb-8 md:mb-12 max-w-lg mx-auto lg:mx-0 leading-relaxed">
                         Our SEO methodology isn't about ranking for everything—it's about owning the conversations that matter. We see the patterns others miss.
                     </p>
 
 <div class="space-y-8">
-<div class="flex items-center gap-6 group">
-<span class="stat-counter text-5xl font-headline font-black text-transparent bg-clip-text bg-gradient-to-r from-surface/40 to-surface/60 transition-all duration-700" data-prefix="+" data-suffix="%" data-start="12" data-target="340">+12%</span>
-<p class="text-lg text-surface/80 group-hover:text-surface transition-colors">Average Organic Revenue Increase</p>
+<div class="flex flex-col md:flex-row items-center gap-2 md:gap-6 group">
+<span class="stat-counter text-3xl md:text-5xl font-headline font-black text-transparent bg-clip-text bg-gradient-to-r from-surface/40 to-surface/60 transition-all duration-700" data-prefix="+" data-suffix="%" data-start="12" data-target="340">+12%</span>
+<p class="text-sm md:text-lg text-surface/80 group-hover:text-surface transition-colors">Average Organic Revenue Increase</p>
 </div>
 <div class="h-px bg-gradient-to-r from-surface/20 to-transparent w-full"></div>
-<div class="flex items-center gap-6 group">
-<span class="stat-counter text-5xl font-headline font-black text-transparent bg-clip-text bg-gradient-to-r from-surface/40 to-surface/60 transition-all duration-700" data-prefix="Top " data-suffix="" data-start="24" data-target="3">Top 24</span>
-<p class="text-lg text-surface/80 group-hover:text-surface transition-colors">Ranking for Competitive Industry Verticals</p>
+<div class="flex flex-col md:flex-row items-center gap-2 md:gap-6 group">
+<span class="stat-counter text-3xl md:text-5xl font-headline font-black text-transparent bg-clip-text bg-gradient-to-r from-surface/40 to-surface/60 transition-all duration-700" data-prefix="Top " data-suffix="" data-start="24" data-target="3">Top 24</span>
+<p class="text-sm md:text-lg text-surface/80 group-hover:text-surface transition-colors">Ranking for Competitive Industry Verticals</p>
 </div>
-<div class="pt-4">
-<button id="simulate-growth-btn" class="px-8 py-4 border border-primary-container/30 text-primary-container hover:bg-primary-container hover:text-stone-900 rounded-md font-bold text-lg flex items-center gap-3 transition-all hover:shadow-[0_0_20px_rgba(255,107,43,0.3)] hover:-translate-y-1">
+<div class="pt-8 pb-12 lg:pb-0">
+<button id="simulate-growth-btn" class="w-full md:w-auto justify-center px-5 md:px-8 py-4 border border-primary-container/30 text-primary-container hover:bg-primary-container hover:text-stone-900 rounded-md font-bold text-lg flex items-center gap-3 transition-all hover:shadow-[0_0_20px_rgba(255,107,43,0.3)] hover:-translate-y-1 mx-auto lg:mx-0">
     <span class="material-symbols-outlined pb-[2px]">rocket_launch</span> <span id="simulate-btn-text">Initiate Growth</span>
 </button>
 </div>
@@ -287,9 +305,9 @@
 
 <div class="relative group perspective-1000">
 <div class="aspect-square bg-surface-container-low/5 rounded-full absolute -top-20 -right-20 w-[120%] animate-pulse mix-blend-screen pointer-events-none"></div>
-<div class="relative z-10 p-8 bg-surface-container-low/10 rounded-2xl backdrop-blur-2xl border border-white/10 shadow-[0_0_40px_rgba(255,107,43,0.1)] transition-transform duration-700 group-hover:-translate-y-2 hover:shadow-[0_0_80px_rgba(255,107,43,0.15)] overflow-hidden">
+<div class="relative z-10 p-4 md:p-8 bg-surface-container-low/10 rounded-2xl backdrop-blur-2xl border border-white/10 shadow-[0_0_40px_rgba(255,107,43,0.1)] transition-transform duration-700 group-hover:-translate-y-2 hover:shadow-[0_0_80px_rgba(255,107,43,0.15)] overflow-hidden">
 
-<img src="mainlogo.png" id="seo-chart-logo" class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 object-contain opacity-0 scale-50 transition-all duration-[2000ms] pointer-events-none" alt="Nova Setup Logo">
+<img src="mainlogo-hero.webp" id="seo-chart-logo" loading="lazy" width="840" height="840" class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 object-contain opacity-0 scale-50 transition-all duration-[2000ms] pointer-events-none" alt="Nova Setup Logo">
 
 <div class="flex justify-between items-center mb-8 relative z-20">
 <div>
@@ -302,7 +320,7 @@
 </div>
 </div>
 
-<div class="h-64 flex items-end justify-between gap-3 relative">
+<div class="h-48 md:h-64 flex items-end justify-between gap-1.5 md:gap-3 relative">
 <div class="absolute inset-0 flex flex-col justify-between pointer-events-none opacity-20">
 <div class="border-t border-dashed border-surface/50 w-full"></div>
 <div class="border-t border-dashed border-surface/50 w-full"></div>
@@ -443,22 +461,22 @@
     });
 </script>
 <!-- Work/Case Studies Section -->
-<section id="work" class="py-32 bg-surface dark:bg-stone-950">
-<div class="container mx-auto px-8">
-<div class="mb-24">
-<h2 class="font-headline text-6xl font-bold mb-4">Selected Work</h2>
-<div class="h-2 w-32 bg-primary-container"></div>
+<section id="work" class="py-16 md:py-32 bg-surface dark:bg-stone-950">
+<div class="container mx-auto px-5 md:px-8">
+<div class="mb-12 md:mb-24 text-center md:text-left">
+<h2 class="font-headline text-4xl md:text-6xl font-bold mb-4">Selected Work</h2>
+<div class="h-2 w-24 md:w-32 bg-primary-container mx-auto md:mx-0"></div>
 </div>
-<div class="space-y-40">
+<div class="space-y-20 md:space-y-40">
 <!-- Case Study 01 -->
-<div class="group flex flex-col md:flex-row gap-16 items-center">
+<div class="group flex flex-col md:flex-row gap-8 md:gap-16 items-center">
 <div class="w-full md:w-3/5 overflow-hidden rounded-lg shadow-2xl transition-transform duration-700 hover:scale-[1.02]">
-<img alt="Hicks Men's Salon website" loading="lazy" decoding="async" class="w-full h-auto grayscale group-hover:grayscale-0 transition-all duration-1000" data-alt="Sophisticated dark-mode men's salon website landing page" src="work1.png"/>
+<img alt="Hicks Men's Salon website" loading="lazy" decoding="async" width="1200" height="auto" class="w-full h-auto grayscale group-hover:grayscale-0 transition-all duration-1000" data-alt="Sophisticated dark-mode men's salon website landing page" src="work1.webp"/>
 </div>
-<div class="w-full md:w-2/5">
+<div class="w-full md:w-2/5 text-center md:text-left">
 <span class="font-label text-sm tracking-widest text-primary mb-2 block">MENS GROOMING | WEB DESIGN</span>
-<h3 class="font-headline text-4xl font-bold mb-2">HICKS | Men's Salon</h3>
-<p class="font-headline text-xl text-primary-container mb-6 italic">Master Your Style.</p>
+<h3 class="font-headline text-2xl md:text-4xl font-bold mb-2">HICKS | Men's Salon</h3>
+<p class="font-headline text-lg md:text-xl text-primary-container mb-4 md:mb-6 italic">Master Your Style.</p>
 <p class="text-secondary dark:text-stone-400 text-lg mb-8 leading-relaxed">
                             A sophisticated digital experience for a premium men's salon. The design leverages a sophisticated, dark-mode aesthetic with classic typography to mirror the luxury services provided. Conversions, like online bookings, are a primary focus.
                         </p>
@@ -466,13 +484,13 @@
 </div>
 </div>
 <!-- Case Study 02 -->
-<div class="group flex flex-col md:flex-row-reverse gap-16 items-center">
+<div class="group flex flex-col md:flex-row-reverse gap-8 md:gap-16 items-center">
 <div class="w-full md:w-3/5 overflow-hidden rounded-lg shadow-2xl transition-transform duration-700 hover:scale-[1.02]">
-<img alt="Precision HVAC Pro website" loading="lazy" decoding="async" class="w-full h-auto grayscale group-hover:grayscale-0 transition-all duration-1000" data-alt="Precision HVAC Pro landing page design" src="work2.png"/>
+<img alt="Precision HVAC Pro website" loading="lazy" decoding="async" width="1200" height="auto" class="w-full h-auto grayscale group-hover:grayscale-0 transition-all duration-1000" data-alt="Precision HVAC Pro landing page design" src="work2.webp"/>
 </div>
-<div class="w-full md:w-2/5">
+<div class="w-full md:w-2/5 text-center md:text-left">
 <span class="font-label text-sm tracking-widest text-primary mb-4 block">HVAC SERVICES | WEB DESIGN & LEAD GEN</span>
-<h3 class="font-headline text-4xl font-bold mb-6">Precision HVAC Pro</h3>
+<h3 class="font-headline text-2xl md:text-4xl font-bold mb-4 md:mb-6">Precision HVAC Pro</h3>
 <p class="text-secondary dark:text-stone-400 text-lg leading-relaxed mb-4">
                             A high-conversion landing page designed for local service reliability. This project focused on trust-building through team imagery and clear action triggers, featuring a 24/7 emergency service highlight and a streamlined lead capture system for free estimates.
                         </p>
@@ -486,11 +504,11 @@
 </div>
 </section>
 <!-- Testimonials Section -->
-<section id="testimonials" class="py-32 bg-surface-container-high dark:bg-stone-900 relative">
-<div class="container mx-auto px-8">
+<section id="testimonials" class="py-16 md:py-32 bg-surface-container-high dark:bg-stone-900 relative">
+<div class="container mx-auto px-5 md:px-8">
 <div class="max-w-4xl mx-auto text-center">
 <span class="material-symbols-outlined text-6xl text-primary-container/30 mb-10" style="font-variation-settings: 'FILL' 1;">format_quote</span>
-<blockquote class="font-headline text-3xl md:text-5xl font-bold italic leading-tight mb-12">
+<blockquote class="font-headline text-xl md:text-3xl lg:text-5xl font-bold italic leading-tight mb-8 md:mb-12">
                     "Nova significantly improved our online presence. Our search visibility increased remarkably in three months, and our new design has set a high standard for our brand."
                 </blockquote>
 <div>
@@ -501,36 +519,26 @@
 </div>
 </section>
 <!-- Contact Section -->
-<section id="contact" class="py-32 bg-surface dark:bg-stone-950">
-<div class="container mx-auto px-8 max-w-6xl">
-<div class="grid grid-cols-1 lg:grid-cols-2 gap-24">
-<div>
-<h2 class="font-headline text-6xl font-bold mb-10">Let's Discuss <br/> Your Vision.</h2>
-<p class="text-secondary dark:text-stone-400 text-xl mb-12 leading-relaxed">Ready to elevate your web presence? We're ready when you are.</p>
+<section id="contact" class="py-16 md:py-32 bg-surface dark:bg-stone-950">
+<div class="container mx-auto px-5 md:px-8 max-w-6xl">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-24">
+<div class="text-center lg:text-left">
+<h2 class="font-headline text-4xl md:text-6xl font-bold mb-6 md:mb-10">Let's Discuss <br/> Your Vision.</h2>
+<p class="text-secondary dark:text-stone-400 text-base md:text-xl mb-8 md:mb-12 leading-relaxed">Ready to elevate your web presence? We're ready when you are.</p>
 <div class="space-y-6">
 
-            <div class="flex items-center gap-2 md:gap-4 ml-auto md:ml-0">
-                <button onclick="toggleDarkMode()" class="text-stone-600 dark:text-stone-400 hover:text-orange-600 transition-colors p-2 rounded-full focus:outline-none flex items-center justify-center">
-                    <span class="material-symbols-outlined dark:hidden block">dark_mode</span>
-                    <span class="material-symbols-outlined dark:block hidden text-stone-200">light_mode</span>
-                </button>
-
+            <div class="flex items-center justify-center lg:justify-start gap-2 md:gap-4">
 <span class="material-symbols-outlined text-primary-container">mail</span>
 <span class="font-bold text-lg">aihasan91225@gmail.com</span>
 </div>
 
-            <div class="flex items-center gap-2 md:gap-4 ml-auto md:ml-0">
-                <button onclick="toggleDarkMode()" class="text-stone-600 dark:text-stone-400 hover:text-orange-600 transition-colors p-2 rounded-full focus:outline-none flex items-center justify-center">
-                    <span class="material-symbols-outlined dark:hidden block">dark_mode</span>
-                    <span class="material-symbols-outlined dark:block hidden text-stone-200">light_mode</span>
-                </button>
-
+            <div class="flex items-center justify-center lg:justify-start gap-2 md:gap-4">
 <span class="material-symbols-outlined text-primary-container">location_on</span>
 <span class="font-bold text-lg">Creative District, Studio 22</span>
 </div>
 </div>
 </div>
-<div class="bg-surface-container-low dark:bg-stone-900 p-10 rounded-lg">
+<div class="bg-surface-container-low dark:bg-stone-900 p-6 md:p-10 rounded-lg">
 <form action="https://formsubmit.co/aihasan91225@gmail.com" method="POST" class="space-y-8">
 <div>
 <label class="font-label text-xs uppercase tracking-widest text-secondary dark:text-stone-400 block mb-4">Your Name</label>
@@ -553,9 +561,9 @@
 </div>
 </section>
 <!-- Footer -->
-<footer class="bg-stone-900 dark:bg-black w-full py-20 px-8 tonal-contrast-dark-to-light">
-<div class="max-w-screen-2xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12">
-<div class="md:col-span-1">
+<footer class="bg-stone-900 dark:bg-black w-full py-12 md:py-20 px-5 md:px-8 tonal-contrast-dark-to-light">
+<div class="max-w-screen-2xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12">
+<div class="col-span-2 md:col-span-1">
 <div class="text-3xl font-black text-white mb-6">Nova</div>
 <p class="text-stone-400 font-body leading-relaxed mb-8">
                     Premium digital experiences for brands that demand better. Architecting growth through modern design and data-driven SEO.
@@ -597,7 +605,7 @@
 <p class="mt-4 text-stone-400">contact@nova.agency</p>
 </div>
 </div>
-<div class="max-w-screen-2xl mx-auto mt-20 pt-8 border-t border-white/5 text-stone-500 text-xs tracking-widest uppercase">
+<div class="max-w-screen-2xl mx-auto mt-12 md:mt-20 pt-8 border-t border-white/5 text-stone-500 text-xs tracking-widest uppercase">
             © 2024 Nova Agency. Premium Web Experiences.
         </div>
 </footer>
@@ -642,7 +650,7 @@
 
     // Glow management
     function updateGlow() {
-        if (speed > 8) {
+        if (speed > 3) {
             spinner.classList.add('glow');
         } else {
             spinner.classList.remove('glow');
@@ -672,4 +680,24 @@
     requestAnimationFrame(frame);
 })();
 </script>
-</body></html>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+        if (btn && menu) {
+            btn.addEventListener('click', () => {
+                menu.classList.toggle('hidden');
+                menu.classList.toggle('flex');
+            });
+            menu.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    menu.classList.add('hidden');
+                    menu.classList.remove('flex');
+                });
+            });
+        }
+    });
+</script>
+</body>
+</html>

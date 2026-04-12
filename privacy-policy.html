@@ -4,7 +4,8 @@
     <meta charset="utf-8"/>
     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
     <title>Privacy Policy | Nova</title>
-    <link rel="preconnect" href="https://lh3.googleusercontent.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
@@ -94,9 +95,9 @@
 <body class="bg-surface dark:bg-stone-950 font-body text-on-surface dark:text-stone-100 dark:text-stone-200 antialiased pt-32">
     <!-- Top Navigation Bar -->
     <nav class="fixed top-0 w-full z-50 bg-stone-50/80 dark:bg-stone-950/80 backdrop-blur-xl shadow-[0px_24px_48px_rgba(28,27,27,0.06)] border-none">
-        <div class="flex justify-between items-center px-8 py-4 max-w-screen-2xl mx-auto">
+        <div class="flex justify-between items-center px-5 md:px-8 py-4 max-w-screen-2xl mx-auto">
             <a href="index.html" class="flex items-center">
-                <img src="mainlogo.png" alt="Nova Logo" class="h-16 w-16 md:h-20 md:w-20 object-contain transition-transform hover:scale-105">
+                <img src="mainlogo-nav.webp" alt="Nova Logo" width="160" height="160" class="h-16 w-16 md:h-20 md:w-20 object-contain transition-transform hover:scale-105">
             </a>
             <div class="hidden md:flex items-center space-x-12">
                 <a class="text-stone-600 dark:text-stone-400 font-medium font-['Space_Grotesk'] tracking-tight hover:text-orange-600 transition-colors duration-300" href="index.html#services">Services</a>
@@ -104,19 +105,34 @@
                 <a class="text-stone-600 dark:text-stone-400 font-medium font-['Space_Grotesk'] tracking-tight hover:text-orange-600 transition-colors duration-300" href="index.html#seo">SEO</a>
                 <a class="text-stone-600 dark:text-stone-400 font-medium font-['Space_Grotesk'] tracking-tight hover:text-orange-600 transition-colors duration-300" href="index.html#testimonials">Testimonials</a>
                 <a class="text-stone-600 dark:text-stone-400 font-medium font-['Space_Grotesk'] tracking-tight hover:text-orange-600 transition-colors duration-300" href="index.html#contact">Contact</a>
-            </div>
+<a class="bg-primary-container block text-center text-on-primary-container px-6 py-3 rounded-md font-bold text-sm tracking-tight active:scale-95 transition-transform mt-4" href="index.html#contact">Get Started</a>
+</div>
 
             <div class="flex items-center gap-2 md:gap-4 ml-auto md:ml-0">
                 <button onclick="toggleDarkMode()" class="text-stone-600 dark:text-stone-400 hover:text-orange-600 transition-colors p-2 rounded-full focus:outline-none flex items-center justify-center">
                     <span class="material-symbols-outlined dark:hidden block">dark_mode</span>
                     <span class="material-symbols-outlined dark:block hidden text-stone-200">light_mode</span>
                 </button>
+                <button id="mobile-menu-btn" class="md:hidden text-stone-600 dark:text-stone-400 hover:text-orange-600 transition-colors p-2 rounded-full focus:outline-none flex items-center justify-center ml-1">
+                    <span class="material-symbols-outlined">menu</span>
+                </button>
 </div>
         </div>
+    
+        <!-- Mobile Menu Container -->
+        <div id="mobile-menu" class="hidden flex-col bg-stone-50 dark:bg-stone-950 border-t border-surface-variant dark:border-stone-800 absolute w-full left-0 top-full px-5 md:px-8 py-6 shadow-2xl">
+            
+                <a class="text-stone-600 dark:text-stone-400 font-medium font-['Space_Grotesk'] tracking-tight hover:text-orange-600 block py-2 transition-colors duration-300" href="index.html#services">Services</a>
+                <a class="text-stone-600 dark:text-stone-400 font-medium font-['Space_Grotesk'] tracking-tight hover:text-orange-600 block py-2 transition-colors duration-300" href="index.html#work">Work</a>
+                <a class="text-stone-600 dark:text-stone-400 font-medium font-['Space_Grotesk'] tracking-tight hover:text-orange-600 block py-2 transition-colors duration-300" href="index.html#seo">SEO</a>
+                <a class="text-stone-600 dark:text-stone-400 font-medium font-['Space_Grotesk'] tracking-tight hover:text-orange-600 block py-2 transition-colors duration-300" href="index.html#testimonials">Testimonials</a>
+                <a class="text-stone-600 dark:text-stone-400 font-medium font-['Space_Grotesk'] tracking-tight hover:text-orange-600 block py-2 transition-colors duration-300" href="index.html#contact">Contact</a>
+<a class="bg-primary-container block text-center text-on-primary-container px-6 py-3 rounded-md font-bold text-sm tracking-tight active:scale-95 transition-transform mt-4" href="index.html#contact">Get Started</a>
+</div>
     </nav>
 
     <!-- Content -->
-    <main class="container mx-auto px-8 max-w-4xl py-24 min-h-screen">
+    <main class="container mx-auto px-5 md:px-8 max-w-4xl py-24 min-h-screen">
         <span class="font-label text-sm tracking-widest text-primary mb-4 block uppercase leading-none">Last Updated: October 2024</span>
         <h1 class="font-headline text-5xl md:text-6xl font-bold mb-16 text-on-surface dark:text-stone-100 border-b pb-8 border-outline-variant dark:border-stone-700 dark:bg-stone-900/30">Privacy Policy</h1>
         
@@ -150,10 +166,31 @@
     </main>
 
     <!-- Footer -->
-    <footer class="bg-stone-900 dark:bg-black w-full py-20 px-8 text-white">
+    <footer class="bg-stone-900 dark:bg-black w-full py-20 px-5 md:px-8 text-white">
         <div class="max-w-screen-2xl mx-auto mt-20 pt-8 border-t border-white/5 text-stone-500 text-xs tracking-widest uppercase text-center">
             © 2024 Nova Agency. Premium Web Experiences.
         </div>
     </footer>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+        if (btn && menu) {
+            btn.addEventListener('click', () => {
+                menu.classList.toggle('hidden');
+                menu.classList.toggle('flex');
+            });
+            menu.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    menu.classList.add('hidden');
+                    menu.classList.remove('flex');
+                });
+            });
+        }
+    });
+</script>
 </body>
+
 </html>
+
