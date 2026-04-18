@@ -193,6 +193,19 @@
         }
     });
 </script>
+<script>
+  const navLinks = document.querySelectorAll('nav a');
+  const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+  navLinks.forEach(link => {
+    const href = link.getAttribute('href');
+    if (!href) return;
+    const linkPage = href.split('/').pop().split('#')[0] || 'index.html';
+    if (linkPage === currentPage && linkPage !== '') {
+      link.classList.add('text-orange-600', 'dark:text-orange-500', 'font-bold', 'border-b-2', 'border-orange-600');
+      link.classList.remove('text-stone-600', 'dark:text-stone-400', 'font-medium');
+    }
+  });
+</script>
 </body>
 
 </html>

@@ -120,7 +120,7 @@
             </a>
             <div class="hidden md:flex items-center space-x-12">
                 <a class="text-stone-600 dark:text-stone-400 font-medium font-['Space_Grotesk'] tracking-tight hover:text-orange-600 dark:hover:text-orange-400 transition-colors duration-300" href="index.html#services">Services</a>
-                <a class="text-orange-600 dark:text-orange-500 font-bold border-b-2 border-orange-600 font-['Space_Grotesk'] tracking-tight transition-colors duration-300" href="index.html#work">Work</a>
+                <a class="text-stone-600 dark:text-stone-400 font-medium font-[\'Space_Grotesk\'] tracking-tight hover:text-orange-600 dark:hover:text-orange-400 transition-colors duration-300" href="index.html#work">Work</a>
                 <a class="text-stone-600 dark:text-stone-400 font-medium font-['Space_Grotesk'] tracking-tight hover:text-orange-600 dark:hover:text-orange-400 transition-colors duration-300" href="index.html#seo">SEO</a>
                 <a class="text-stone-600 dark:text-stone-400 font-medium font-['Space_Grotesk'] tracking-tight hover:text-orange-600 dark:hover:text-orange-400 transition-colors duration-300" href="index.html#testimonials">Testimonials</a>
                 <a class="text-stone-600 dark:text-stone-400 font-medium font-['Space_Grotesk'] tracking-tight hover:text-orange-600 dark:hover:text-orange-400 transition-colors duration-300" href="index.html#contact">Contact</a>
@@ -146,7 +146,7 @@
         <div id="mobile-menu" class="hidden flex-col bg-stone-50 dark:bg-stone-950 border-t border-surface-variant dark:border-stone-800 absolute w-full left-0 top-full px-5 md:px-8 py-6 shadow-2xl">
             
                 <a class="text-stone-600 dark:text-stone-400 font-medium font-['Space_Grotesk'] tracking-tight hover:text-orange-600 block py-2 dark:hover:text-orange-400 transition-colors duration-300" href="index.html#services">Services</a>
-                <a class="text-orange-600 dark:text-orange-500 font-bold border-b-2 border-orange-600 font-['Space_Grotesk'] tracking-tight transition-colors duration-300" href="index.html#work">Work</a>
+                <a class="text-stone-600 dark:text-stone-400 font-medium font-[\'Space_Grotesk\'] tracking-tight hover:text-orange-600 dark:hover:text-orange-400 transition-colors duration-300" href="index.html#work">Work</a>
                 <a class="text-stone-600 dark:text-stone-400 font-medium font-['Space_Grotesk'] tracking-tight hover:text-orange-600 block py-2 dark:hover:text-orange-400 transition-colors duration-300" href="index.html#seo">SEO</a>
                 <a class="text-stone-600 dark:text-stone-400 font-medium font-['Space_Grotesk'] tracking-tight hover:text-orange-600 block py-2 dark:hover:text-orange-400 transition-colors duration-300" href="index.html#testimonials">Testimonials</a>
                 <a class="text-stone-600 dark:text-stone-400 font-medium font-['Space_Grotesk'] tracking-tight hover:text-orange-600 block py-2 dark:hover:text-orange-400 transition-colors duration-300" href="index.html#contact">Contact</a>
@@ -323,6 +323,19 @@
             });
         }
     });
+</script>
+<script>
+  const navLinks = document.querySelectorAll('nav a');
+  const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+  navLinks.forEach(link => {
+    const href = link.getAttribute('href');
+    if (!href) return;
+    const linkPage = href.split('/').pop().split('#')[0] || 'index.html';
+    if (linkPage === currentPage && linkPage !== '') {
+      link.classList.add('text-orange-600', 'dark:text-orange-500', 'font-bold', 'border-b-2', 'border-orange-600');
+      link.classList.remove('text-stone-600', 'dark:text-stone-400', 'font-medium');
+    }
+  });
 </script>
 </body>
 
